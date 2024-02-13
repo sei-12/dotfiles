@@ -11,6 +11,7 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     git
+    zsh-history-substring-search
 )
 
 export ZSH_DISABLE_COMPFIX=true
