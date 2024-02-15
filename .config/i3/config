@@ -1,0 +1,207 @@
+set $mod Mod4
+font pango:monospace 8
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+set $refresh_i3status killall -SIGUSR1 i3status
+
+#
+# Volume
+#
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+floating_modifier $mod
+
+bindsym $mod+Return exec kitty
+bindsym $mod+w kill
+bindsym $mod+ctrl+Return exec firefox
+
+
+#
+# focus
+#
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+n focus mode_toggle
+
+#
+# workspace
+#
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $wsmusic  "music"
+set $wsmemo   "memo"
+
+#
+# switch to workspace
+#
+bindsym $mod+i exec i3_switch_ws.py next
+bindsym $mod+u exec i3_switch_ws.py prev
+bindsym $mod+o exec open_ws.py
+bindsym $mod+Shift+o exec move_emp_ws.py
+bindsym $mod+9 workspace $wsmusic
+bindsym $mod+0 workspace $wsmemo
+
+bindsym $mod+Shift+u move container to workspace prev
+bindsym $mod+Shift+i move container to workspace next
+
+#
+# layout
+#
+# bindsym $mod+v split vertical 
+bindsym $mod+Shift+v split horizontal
+
+#
+# reload i3
+#
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+#
+# exit i3
+#
+bindsym $mod+Shift+e mode "exit i3"
+mode "exit i3" {
+        bindsym Return exec i3-msg exit
+        bindsym Escape mode "default"
+        bindsym $mod+Shift+e mode "default"
+}
+
+#
+# resize
+#
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#
+# polybar
+#
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+#
+# wallpaper
+#
+exec_always --no-startup-id feh --bg-fill $HOME/wallpaper.png
+
+
+#
+# move window
+#
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+font pango: Hack Bold 17
+for_window [all] title_window_icon on
+for_window [all] title_window_icon padding 3px
+for_window [class=".*"] border pixel 1.5
+
+
+# Toggle fullscreen
+#
+bindsym $mod+f fullscreen toggle
+
+client.focused #FF0000 #00AAAA #008800
+
+
+includes ~/.config/i3/term
+
+#
+# screen shot
+#
+bindsym $mod+ctrl+4 exec maim -d 3 ~/Pictures/screen-shot/$(date +%s).png
+bindsym $mod+ctrl+3 exec maim ~/Pictures/screen-shot/$(date +%s).png
+
+
+
+#
+# term
+#
+set $term_cmd    kitty --class _kitty
+set $term_instance  _kitty
+
+set $term_width  80ppt
+set $term_height 80ppt
+
+bindsym $mod+x \
+        [instance=$term_instance] scratchpad show;\
+        [instance=$term_instance] resize set $term_width $term_height;\
+        [instance=$term_instance] move position center ;
+
+for_window [instance=$term_instance] floating enable
+for_window [instance=$term_instance] move scratchpad
+
+exec --no-startup-id $term_cmd
+bindsym $mod+ctrl+Shift+x exec --no-startup-id $term_cmd
+
+#
+# google chrome
+#
+set $start_chrome google-chrome-stable
+set $_chrome_width 40ppt
+set $_chrome_left  60ppt
+bindsym $mod+c \
+        [class="Google-chrome"] scratchpad show;\
+        [class="Google-chrome"] resize set $_chrome_width 98ppt;\
+        [class="Google-chrome"] move position  $_chrome_left 2ppt;
+for_window [class="Google-chrome"] floating enable
+for_window [class="Google-chrome"] move scratchpad
+exec --no-startup-id $start_chrome
+bindsym $mod+ctrl+Shift+c exec --no-startup-id $start_chrome
+bindsym $mod+ctrl+h [class="Google-chrome"] move position  0ppt 2ppt;
+bindsym $mod+ctrl+l [class="Google-chrome"] move position $_chrome_left 2ppt;
+
+
+#
+# skin
+#
+bindsym $mod+b \
+        [class="skin"] scratchpad show;\
+        [class="skin"] resize set 60ppt 60ppt;\
+        [class="skin"] move position center ;
+for_window [class="skin"] floating enable
+for_window [class="skin"] move scratchpad
+
+#
+# おためし
+#
+bindsym $mod+space \
+        [class="skin"] move scratchpad \
+        [class="Google-chrome"] move scratchpad \
+        [instance=$term_instance] move scratchpad
+
+#
+# Input Method
+#
+exec --no-startup-id ibus-daemon -drxR
+
+#
+# picom
+#
+exec picom --config ~/.config/picom/config.conf --experimental-backends 
+
+exec --no-startup-id i3-msg "workspace 1"
