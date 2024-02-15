@@ -1,0 +1,44 @@
+{
+    //
+    // VIM
+    //
+    "vim.useSystemClipboard": true,
+    "vim.visualstar": true, //カーソル上にあるワードを"*"で検索
+    "editor.smoothScrolling": true,
+    "explorer.compactFolders": false,
+    "extensions.ignoreRecommendations": true,
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "Hack",
+    "workbench.startupEditor": "none",
+    "git.openRepositoryInParentFolders": "never",
+    "editor.fontWeight": "550",
+    "editor.fontSize": 18.5,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "screencastMode.keyboardOptions": {
+        "showSingleEditorCursorMoves": false
+    },
+    "keyboard.dispatch": "keyCode",
+    "editor.copyWithSyntaxHighlighting": false,
+    "workbench.colorTheme": "Community Material Theme Palenight",
+    "editor.lineNumbers": "relative",
+    "editor.mouseWheelScrollSensitivity": -3.5,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.renderControlCharacters": true,
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning"
+    ],
+    "window.zoomLevel": -1,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "vim.surround": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    }
+}
