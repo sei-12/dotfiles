@@ -6,9 +6,9 @@
 # $git_status\
 # $git_branch\
 
-format = """
-$git_status\
-$character"""
+# format = """
+# $git_status\
+# $character"""
 
 # Which is equivalent to
 # format = """
