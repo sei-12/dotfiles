@@ -163,6 +163,7 @@ def get_battery_cells() -> list:
         return []
 
 
+
 timer_id = None
 right_status_length = -1
 

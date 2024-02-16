@@ -25,6 +25,7 @@ eval "$(starship init zsh)"
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
 alias ls='echo "ｌを使え！！！"'
+alias gits='git status --short --branch'
 alias df='duf'
 alias pbcopy='xsel --clipboard --input'
 alias cat='batcat --paging=never'

@@ -1,11 +1,13 @@
 # Move the directory to the second line
 
+# $git_commit\
+# $git_state\
+# $git_metrics\
+# $git_status\
+# $git_branch\
+
 format = """
-$git_commit\
-$git_state\
-$git_metrics\
 $git_status\
-$git_branch\
 $character"""
 
 # Which is equivalent to
