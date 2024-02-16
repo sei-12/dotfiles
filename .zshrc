@@ -143,11 +143,12 @@ setopt no_beep
 # kitty with ssh issue https://www.reddit.com/r/linux4noobs/comments/tkvs8o/kitty_terminal_with_ssh_issues/
 export TERM=xterm-256color
 
-# 乱用しすぎてるから一回使わないようにする
-function scroll-and-clear-screen() { }
+function scroll-and-clear-screen() {
+    printf '\n%.0s' {1..$LINES}
+    zle clear-screen
+}
 zle -N scroll-and-clear-screen
 bindkey '^l' scroll-and-clear-screen
-
 # dotfiles first
 export LC_COLLATE="C"
 
