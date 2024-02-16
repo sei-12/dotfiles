@@ -156,3 +156,10 @@ export HISTORY_SUBSTRING_SEARCH_PREFIXED=not-empty
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 export FZF_DEFAULT_OPTS="--reverse --height=20"
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+   CURSOR=${#BUFFER}
+   zle clear-screen
+}
+zle -N select-history
+bindkey '^r' select-history
