@@ -25,9 +25,10 @@ eval "$(starship init zsh)"
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
 alias ls='echo "ｌを使え！！！"'
+alias df='duf'
 alias pbcopy='xsel --clipboard --input'
 alias cat='batcat --paging=never'
-alias l='\ls --color=auto -CF -a'
+alias l='exa --icons -al'
 alias lg='\ls -a -1 | \rg'
 alias src='source ~/.zshrc'
 alias d='cd ~/Documents'
@@ -83,6 +84,9 @@ function mkcd() {
   mkdir $1 && cd $1 
 }
 
+function cd(){
+  builtin cd $@ && l -l
+}
 
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
@@ -102,6 +106,8 @@ bindkey '^[OB' history-substring-search-down
 export PATH=$HOME/password/pub-bin:$PATH
 export PATH=$HOME/.my-bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/kitty.app/bin:$PATH
+
 
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
@@ -135,10 +141,8 @@ setopt no_beep
 # kitty with ssh issue https://www.reddit.com/r/linux4noobs/comments/tkvs8o/kitty_terminal_with_ssh_issues/
 export TERM=xterm-256color
 
-function scroll-and-clear-screen() {
-    printf '\n%.0s' {1..$LINES}
-    zle clear-screen
-}
+# 乱用しすぎてるから一回使わないようにする
+function scroll-and-clear-screen() { }
 zle -N scroll-and-clear-screen
 bindkey '^l' scroll-and-clear-screen
 

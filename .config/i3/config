@@ -15,7 +15,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 floating_modifier $mod
 
-bindsym $mod+Return exec kitty
 bindsym $mod+w kill
 bindsym $mod+ctrl+Return exec firefox
 
@@ -141,7 +140,12 @@ bindsym $mod+ctrl+3 exec maim ~/Pictures/screen-shot/$(date +%s).png
 #
 # term
 #
-set $term_cmd    kitty --class _kitty
+
+# bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
+
+set $term_cmd ~/.local/kitty.app/bin/kitty --class _kitty
+
 set $term_instance  _kitty
 
 set $term_width  80ppt
