@@ -189,14 +189,8 @@ bindsym $mod+b \
         [class="skin"] move position center ;
 for_window [class="skin"] floating enable
 for_window [class="skin"] move scratchpad
-
-#
-# おためし
-#
-bindsym $mod+space \
-        [class="skin"] move scratchpad \
-        [class="Google-chrome"] move scratchpad \
-        [instance=$term_instance] move scratchpad
+exec --no-startup-id skin
+bindsym $mod+ctrl+Shift+b exec --no-startup-id skin
 
 #
 # Input Method
