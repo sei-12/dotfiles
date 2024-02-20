@@ -49,9 +49,9 @@ set $wsmemo   "memo"
 #
 # switch to workspace
 #
-bindsym $mod+i exec i3_switch_ws.py next
-bindsym $mod+u exec i3_switch_ws.py prev
-bindsym $mod+o exec open_ws.py
+bindsym $mod+i workspace next
+bindsym $mod+u workspace prev
+bindsym $mod+o exec open-emp-ws.py
 bindsym $mod+Shift+o exec move_emp_ws.py
 bindsym $mod+9 workspace $wsmusic
 bindsym $mod+0 workspace $wsmemo
