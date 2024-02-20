@@ -17,6 +17,10 @@ floating_modifier $mod
 
 bindsym $mod+w kill
 bindsym $mod+ctrl+Return exec firefox
+bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+F2 exec chromium
+
+
 
 
 #
@@ -98,7 +102,12 @@ bindsym $mod+r mode "resize"
 #
 # polybar
 #
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+bar {
+	i3bar_command i3bar
+	status_command i3status
+	position bottom
+}
 
 #
 # wallpaper

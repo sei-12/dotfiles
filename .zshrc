@@ -26,19 +26,43 @@ eval "$(starship init zsh)"
 #----------------------------------------------------------------------------------------------------#
 alias ls='echo "ｌを使え！！！"'
 alias gits='git status --short --branch'
-alias df='duf'
 alias pbcopy='xsel --clipboard --input'
-alias cat='batcat --paging=never'
-alias less='batcat'
-alias l='exa --icons -al'
 alias lg='\ls -a -1 | \rg'
 alias src='source ~/.zshrc'
 alias d='cd ~/Documents'
 alias dot='vim ~/dotfiles'
 alias C='code .'
 alias sc-sh='maim ~/Pictures/$(date +%s).png'
-alias grep='rg'
 alias tree='tree -I .git -I node_modules'
+
+# grep => rg
+if type "rg" > /dev/null 2>&1; then
+	alias grep='rg'
+else
+	alias grep='grep --color=auto'
+fi
+
+# cat => bat
+if type "bat" > /dev/null 2>&1; then
+	alias cat='bat --paging=never'
+	alias less='bat'
+fi
+if type "batcat" > /dev/null 2>&1; then
+	alias cat='batcat --paging=never'
+	alias less='batcat'
+fi
+
+# ls => exa
+if type "bat" > /dev/null 2>&1; then
+	alias l='exa --icons -al'
+else
+	alias l='ls -la'
+fi
+
+# df => duf
+if type "duf" > /dev/null 2>&1; then
+	alias df='duf'
+fi
 
 function c(){
   cd "$(
