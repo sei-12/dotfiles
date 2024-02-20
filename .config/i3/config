@@ -104,6 +104,7 @@ bindsym $mod+r mode "resize"
 #
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bar {
+        font pango: Hack 10
 	i3bar_command i3bar
 	status_command i3status
 	position bottom
@@ -174,21 +175,22 @@ bindsym $mod+ctrl+Shift+x exec --no-startup-id $term_cmd
 #
 # google chrome
 #
-set $start_chrome google-chrome-stable
+set $chrome_wm_class Chromium
+set $start_chrome chromium
 set $_chrome_width 40ppt
 set $_chrome_left  60ppt
 set $_chrome_height 60ppt
 set $_chrome_top    40ppt
 bindsym $mod+c \
-        [class="Google-chrome"] scratchpad show;\
-        [class="Google-chrome"] resize set $_chrome_width $_chrome_height;\
-        [class="Google-chrome"] move position  $_chrome_left $_chrome_top;
-for_window [class="Google-chrome"] floating enable
-for_window [class="Google-chrome"] move scratchpad
+        [class=$chrome_wm_class] scratchpad show;\
+        [class=$chrome_wm_class] resize set $_chrome_width $_chrome_height;\
+        [class=$chrome_wm_class] move position  $_chrome_left $_chrome_top;
+for_window [class=$chrome_wm_class] floating enable
+for_window [class=$chrome_wm_class] move scratchpad
 exec --no-startup-id $start_chrome
 bindsym $mod+ctrl+Shift+c exec --no-startup-id $start_chrome
-bindsym $mod+ctrl+h [class="Google-chrome"] move position  0ppt 2ppt;
-bindsym $mod+ctrl+l [class="Google-chrome"] move position $_chrome_left 2ppt;
+bindsym $mod+ctrl+h [class=$chrome_wm_class] move position  0ppt 2ppt;
+bindsym $mod+ctrl+l [class=$chrome_wm_class] move position $_chrome_left 2ppt;
 
 
 #
@@ -211,6 +213,7 @@ exec --no-startup-id ibus-daemon -drxR
 #
 # picom
 #
-exec picom --config ~/.config/picom/config.conf --experimental-backends 
+exec picom --config ~/.config/picom/config.conf
+
 
 exec --no-startup-id i3-msg "workspace 1"
