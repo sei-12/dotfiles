@@ -1,0 +1,6 @@
+{
+	"how_to_open_url": {
+		"https":{"cmd":"/home/sei12/.config/skin/open-url.sh","args":[]},
+		"http":{"cmd":"/home/sei12/.config/skin/open-url.sh","args":[]}
+	}
+}
