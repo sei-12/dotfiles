@@ -103,7 +103,7 @@ bar {
         font pango: Hack 10
 	i3bar_command i3bar
 	status_command i3status
-	position bottom
+	position top
 }
 
 #
@@ -175,8 +175,8 @@ set $chrome_wm_class Chromium
 set $start_chrome chromium
 set $_chrome_width 40ppt
 set $_chrome_left  60ppt
-set $_chrome_height 60ppt
-set $_chrome_top    40ppt
+set $_chrome_height 98ppt
+set $_chrome_top    2ppt
 bindsym $mod+c \
         [class=$chrome_wm_class] scratchpad show;\
         [class=$chrome_wm_class] resize set $_chrome_width $_chrome_height;\
