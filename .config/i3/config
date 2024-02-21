@@ -43,8 +43,6 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $wsmusic  "music"
-set $wsmemo   "memo"
 
 #
 # switch to workspace
@@ -53,8 +51,6 @@ bindsym $mod+i workspace next
 bindsym $mod+u workspace prev
 bindsym $mod+o exec open-emp-ws.py
 bindsym $mod+Shift+o exec move_emp_ws.py
-bindsym $mod+9 workspace $wsmusic
-bindsym $mod+0 workspace $wsmemo
 
 bindsym $mod+Shift+u move container to workspace prev
 bindsym $mod+Shift+i move container to workspace next
