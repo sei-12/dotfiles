@@ -172,7 +172,7 @@ bindsym $mod+ctrl+Shift+x exec --no-startup-id $term_cmd
 # google chrome
 #
 set $chrome_wm_class Chromium
-set $start_chrome chromium
+set $start_chrome chromium --hide-crash-restore-bubble
 set $_chrome_width 40ppt
 set $_chrome_left  60ppt
 set $_chrome_height 98ppt
