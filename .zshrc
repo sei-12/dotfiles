@@ -8,10 +8,10 @@ ZSH_THEME="robbyrussell"
 #----------------------------------------------------------------------------------------------------#
 
 plugins=(
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    git
-    zsh-history-substring-search
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	git
+	zsh-history-substring-search
 )
 
 export ZSH_DISABLE_COMPFIX=true
@@ -38,87 +38,85 @@ alias tree='tree -I .git -I node_modules'
 #
 # find => fd
 #
-if type "fd" > /dev/null 2>&1; then
+if type "fd" >/dev/null 2>&1; then
 	alias find='fd'
 else
-  echo "\"fd\" is not installed"
+	echo "\"fd\" is not installed"
 fi
 
 #
 # grep => rg
 #
-if type "rg" > /dev/null 2>&1; then
+if type "rg" >/dev/null 2>&1; then
 	alias grep='rg'
 else
 	alias grep='grep --color=auto'
-  echo "\"rg\" is not installed"
+	echo "\"rg\" is not installed"
 fi
 
 #
 # cat => bat
 #
-if type "bat" > /dev/null 2>&1; then
+if type "bat" >/dev/null 2>&1; then
 	alias cat='bat --paging=never'
 	alias less='bat'
 else
-  if type "batcat" > /dev/null 2>&1; then
-    alias cat='batcat --paging=never'
-    alias less='batcat'
-  else
-    # TODO
-    # ifが複雑になった
-    # 書き方がわからん
-    echo "\"batcat\" is not installed"
-  fi
+	if type "batcat" >/dev/null 2>&1; then
+		alias cat='batcat --paging=never'
+		alias less='batcat'
+	else
+		# TODO
+		# ifが複雑になった
+		# 書き方がわからん
+		echo "\"batcat\" is not installed"
+	fi
 fi
-
 
 #
 # ls => exa
 #
-if type "exa" > /dev/null 2>&1; then
+if type "exa" >/dev/null 2>&1; then
 	alias l='exa --icons -al'
 else
 	alias l='ls -la'
-  echo "\"exa\" is not installed"
+	echo "\"exa\" is not installed"
 fi
 
 #
 # df => duf
 #
-if type "duf" > /dev/null 2>&1; then
+if type "duf" >/dev/null 2>&1; then
 	alias df='duf'
-else 
-  echo "\"duf\" is not installed"
+else
+	echo "\"duf\" is not installed"
 fi
 
-
-if type "fd" > /dev/null 2>&1; then
-  function c(){
-    cd "$( fd . ~ -t d -H | fzf )"
-  }
-  function cr(){
-    cd "$( fd . / -t d -H | fzf )"
-  }
-  function c.(){
-    cd "$( fd -t d -H | fzf )"
-  }
-else 
-  source $HOME/dotfiles/zsh_files/find_fzf_cd.zsh
+if type "fd" >/dev/null 2>&1; then
+	function c() {
+		cd "$(fd . ~ -t d -H | fzf)"
+	}
+	function cr() {
+		cd "$(fd . / -t d -H | fzf)"
+	}
+	function c.() {
+		cd "$(fd -t d -H | fzf)"
+	}
+else
+	source $HOME/dotfiles/zsh_files/find_fzf_cd.zsh
 fi
 
 alias icat='kitty kitten icat'
 
-function rand(){
-  cat /dev/urandom | tr -dc 'a-z' | fold -w $1 | head -n 1
+function rand() {
+	cat /dev/urandom | tr -dc 'a-z' | fold -w $1 | head -n 1
 }
 
 function mkcd() {
-  mkdir $1 && cd $1 
+	mkdir $1 && cd $1
 }
 
-function cd(){
-  builtin cd $@ && l -l
+function cd() {
+	builtin cd $@ && l -l
 }
 
 #----------------------------------------------------------------------------------------------------#
@@ -141,7 +139,6 @@ export PATH=$HOME/.my-bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/kitty.app/bin:$PATH
 
-
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
 #                                              HISTORY                                               #
@@ -156,14 +153,12 @@ setopt hist_ignore_all_dups
 setopt append_history
 setopt share_history
 
-
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
 #                                               OTHERS                                               #
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
 
 autoload -Uz edit-command-line
 zle -N edit-command-line
@@ -175,8 +170,8 @@ setopt no_beep
 export TERM=xterm-256color
 
 function scroll-and-clear-screen() {
-    printf '\n%.0s' {1..$LINES}
-    zle clear-screen
+	printf '\n%.0s' {1..$LINES}
+	zle clear-screen
 }
 zle -N scroll-and-clear-screen
 bindkey '^l' scroll-and-clear-screen
@@ -189,9 +184,9 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 export FZF_DEFAULT_OPTS="--reverse --height=20"
 function select-history() {
-  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
-   CURSOR=${#BUFFER}
-   zle clear-screen
+	BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+	CURSOR=${#BUFFER}
+	zle clear-screen
 }
 zle -N select-history
 bindkey '^r' select-history
@@ -200,6 +195,5 @@ bindkey '^r' select-history
 # Node Version Manager
 #
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
