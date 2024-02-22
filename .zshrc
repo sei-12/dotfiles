@@ -32,73 +32,80 @@ alias src='source ~/.zshrc'
 alias d='cd ~/Documents'
 alias dot='code ~/dotfiles'
 alias C='code .'
-alias sc-sh='maim ~/Pictures/$(date +%s).png'
+alias sc-sh='maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png'
 alias tree='tree -I .git -I node_modules'
 
+#
+# find => fd
+#
+if type "fd" > /dev/null 2>&1; then
+	alias find='fd'
+else
+  echo "\"fd\" is not installed"
+fi
+
+#
 # grep => rg
+#
 if type "rg" > /dev/null 2>&1; then
 	alias grep='rg'
 else
 	alias grep='grep --color=auto'
+  echo "\"rg\" is not installed"
 fi
 
+#
 # cat => bat
+#
 if type "bat" > /dev/null 2>&1; then
 	alias cat='bat --paging=never'
 	alias less='bat'
-fi
-if type "batcat" > /dev/null 2>&1; then
-	alias cat='batcat --paging=never'
-	alias less='batcat'
+else
+  if type "batcat" > /dev/null 2>&1; then
+    alias cat='batcat --paging=never'
+    alias less='batcat'
+  else
+    # TODO
+    # ifが複雑になった
+    # 書き方がわからん
+    echo "\"batcat\" is not installed"
+  fi
 fi
 
+
+#
 # ls => exa
-if type "bat" > /dev/null 2>&1; then
+#
+if type "exa" > /dev/null 2>&1; then
 	alias l='exa --icons -al'
 else
 	alias l='ls -la'
+  echo "\"exa\" is not installed"
 fi
 
+#
 # df => duf
+#
 if type "duf" > /dev/null 2>&1; then
 	alias df='duf'
+else 
+  echo "\"duf\" is not installed"
 fi
 
-function c(){
-  cd "$(
-    find ~  -maxdepth 7 \
-    -type d -name node_modules -prune -o \
-    -type d -name .git -prune -o \
-    -type d -name .cache -prune -o \
-    -type d -name _cacache -prune -o \
-    -type d -name "*" -print  2>/dev/null |\
-    fzf
-  )"
-}
 
-function cr(){
-  cd "$(
-    find / -maxdepth 4 \
-    -type d -name node_modules -prune -o \
-    -type d -name .git -prune -o \
-    -type d -name .cache -prune -o \
-    -type d -name _cacache -prune -o \
-    -type d -name "*" -print 2>/dev/null |\
-    fzf
-  )"
-}
-
-function c.(){
-  cd "$(
-    find . \
-    -type d -name node_modules -prune -o \
-    -type d -name .git -prune -o \
-    -type d -name .cache -prune -o \
-    -type d -name _cacache -prune -o \
-    -type d -name "*" -print 2>/dev/null |\
-    fzf
-  )"
-}
+if type "fd" > /dev/null 2>&1; then
+  function c(){
+    cd "$( fd . ~ -t d -H | fzf )"
+  }
+  function cr(){
+    cd "$( fd . / -t d -H | fzf )"
+  }
+  function c.(){
+    cd "$( fd -t d -H | fzf )"
+  }
+else 
+  source $HOME/dotfiles/zsh_files/find_fzf_cd.zsh
+fi
 
 alias icat='kitty kitten icat'
 
