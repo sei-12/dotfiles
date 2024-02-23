@@ -73,12 +73,12 @@ else
 fi
 
 #
-# ls => exa
+# ls => ex
 #
 if type "exa" >/dev/null 2>&1; then
-	alias l='exa --icons -al'
+	alias l='exa -1 --icons -a'
 else
-	alias l='ls -la'
+	alias l='ls -a'
 	echo "\"exa\" is not installed"
 fi
 
@@ -116,7 +116,7 @@ function mkcd() {
 }
 
 function cd() {
-	builtin cd $@ && l -l
+	builtin cd $@ && l
 }
 
 #----------------------------------------------------------------------------------------------------#
