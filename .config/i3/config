@@ -136,9 +136,7 @@ client.focused #FF0000 #00AAAA #008800
 
 #
 # screen shot
-#
-bindsym $mod+ctrl+4 exec maim -d 3 ~/Pictures/screen-shot/$(date +%s).png
-bindsym $mod+ctrl+3 exec maim ~/Pictures/screen-shot/$(date +%s).png
+bindsym $mod+ctrl+3 exec maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png
 
 
 

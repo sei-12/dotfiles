@@ -105,7 +105,9 @@ else
 	source $HOME/dotfiles/zsh_files/find_fzf_cd.zsh
 fi
 
-alias icat='kitty kitten icat'
+if type "kitty" >/dev/null 2>&1; then
+	alias icat='kitty kitten icat'
+fi
 
 function rand() {
 	cat /dev/urandom | tr -dc 'a-z' | fold -w $1 | head -n 1
@@ -182,6 +184,7 @@ export HISTORY_SUBSTRING_SEARCH_PREFIXED=not-empty
 
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+export FZF_DEFAULT_COMMAND="fd . . -H"
 export FZF_DEFAULT_OPTS="--reverse --height=20"
 function select-history() {
 	BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
