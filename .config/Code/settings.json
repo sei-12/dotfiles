@@ -21,7 +21,6 @@
     },
     "keyboard.dispatch": "keyCode",
     "editor.copyWithSyntaxHighlighting": false,
-    "workbench.colorTheme": "Community Material Theme Palenight",
     "editor.lineNumbers": "relative",
     "editor.mouseWheelScrollSensitivity": -3.5,
     "liveServer.settings.donotShowInfoMsg": true,
@@ -41,5 +40,6 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorTheme": "Palenight (Mild Contrast)"
 }

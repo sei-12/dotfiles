@@ -39,14 +39,13 @@ alias tree='tree -I .git -I node_modules'
 # find => fd
 #
 if type "fd" >/dev/null 2>&1; then
-	alias find='fd'
+	# alias find='fd'
 else
 	echo "\"fd\" is not installed"
 fi
 
 #
 # grep => rg
-#
 if type "rg" >/dev/null 2>&1; then
 	alias grep='rg'
 else
