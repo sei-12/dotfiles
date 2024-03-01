@@ -175,10 +175,17 @@ set $_chrome_width 40ppt
 set $_chrome_left  60ppt
 set $_chrome_height 98ppt
 set $_chrome_top    2ppt
-bindsym $mod+c \
+
+bindsym $mod+v \
         [class=$chrome_wm_class] scratchpad show;\
+        [class=$chrome_wm_class] fullscreen disable;\
         [class=$chrome_wm_class] resize set $_chrome_width $_chrome_height;\
         [class=$chrome_wm_class] move position  $_chrome_left $_chrome_top;
+
+bindsym $mod+c \
+        [class=$chrome_wm_class] scratchpad show;\
+        [class=$chrome_wm_class] fullscreen enable;
+        
 for_window [class=$chrome_wm_class] floating enable
 for_window [class=$chrome_wm_class] move scratchpad
 exec --no-startup-id $start_chrome
