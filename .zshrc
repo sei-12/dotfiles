@@ -135,10 +135,20 @@ bindkey '^[OB' history-substring-search-down
 #                                                PATH                                                #
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
-export PATH=$HOME/password/pub-bin:$PATH
-export PATH=$HOME/.my-bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.local/kitty.app/bin:$PATH
+
+_path=(
+	$HOME/password/pub-bin
+	$HOME/.my-bin
+	$HOME/.local/bin
+	$HOME/.local/kitty.app/bin
+)
+
+for dir in $_path; do
+	if [ -d "$dir" ]; then
+		export PATH="$dir:$PATH"
+	fi
+done
+
 
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
@@ -153,6 +163,10 @@ setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt append_history
 setopt share_history
+
+zshaddhistory() {
+    local line="${1%%$'\n'}"
+}
 
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
@@ -196,6 +210,9 @@ bindkey '^r' select-history
 #
 # Node Version Manager
 #
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+function load-nvm(){
+	# 起動時間が0.4sくらいかかるから、必要なときだけ読み込む
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+}
