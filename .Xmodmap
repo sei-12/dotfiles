@@ -245,7 +245,7 @@ keycode  46 = l L 6 L
 keycode  30 = u U 7 U
 keycode  31 = i I 8 I
 keycode  32 = o O 9 O
-keycode  65 = space 0 space
+keycode  65 = space NoSymbol 0
 
 ! Emacs
 keycode  57 = n N Down  Down 
