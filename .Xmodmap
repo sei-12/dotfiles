@@ -236,16 +236,16 @@ clear lock
 keycode  66 = Mode_switch Mode_switch NoSymbol NoSymbol
 
 ! tenkey
-keycode  58 = m M m M
-keycode  59 = comma less comma less
-keycode  60 = period greater period greater
-keycode  44 = j J j J
-keycode  45 = k K k K
-keycode  46 = l L l L
-keycode  30 = u U u U
-keycode  31 = i I u I
-keycode  32 = o O o O
-keycode  65 = space NoSymbol space
+keycode  58 = m M 1 M
+keycode  59 = comma less 2 less
+keycode  60 = period greater 3 greater
+keycode  44 = j J 4 J
+keycode  45 = k K 5 K
+keycode  46 = l L 6 L
+keycode  30 = u U 7 U
+keycode  31 = i I 8 I
+keycode  32 = o O 9 O
+keycode  65 = space 0 space
 
 ! Emacs
 keycode  57 = n N Down  Down 
