@@ -35,6 +35,22 @@ alias sc-sh='maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png'
 alias tree='tree -I .git -I node_modules'
 
 #
+# vim => nvim
+#
+if type "vi" >/dev/null 2>&1; then
+	alias v='vi'
+fi
+if type "vim" >/dev/null 2>&1; then
+	alias v='vim'
+fi
+if type "nvim" >/dev/null 2>&1; then
+	alias v='nvim'
+else
+	echo "\"nvim\" is not installed"
+fi
+
+
+#
 # find => fd
 #
 if type "fd" >/dev/null 2>&1; then
