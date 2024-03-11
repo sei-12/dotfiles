@@ -26,7 +26,6 @@ eval "$(starship init zsh)"
 #----------------------------------------------------------------------------------------------------#
 alias ls='echo "ｌを使え！！！"'
 alias gits='git status --short --branch'
-alias pbcopy='xsel --clipboard --input'
 alias lg='\ls -a -1 | \rg'
 alias src='source ~/.zshrc'
 alias d='cd ~/Documents'
@@ -42,6 +41,12 @@ if type "fd" >/dev/null 2>&1; then
 	# alias find='fd'
 else
 	echo "\"fd\" is not installed"
+fi
+
+if type "xsel" >/dev/null 2>&1; then
+	alias pbcopy='xsel --clipboard --input'
+else
+	echo "\"xsel\" is not installed"
 fi
 
 #
