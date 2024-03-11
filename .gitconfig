@@ -1,0 +1,14 @@
+[user]
+	email = sei.t11@icloud.com
+	name = sei-12
+[core]
+	editor = nvim
+
+[alias]
+	st = status
+	cm = commit
+	ad = add
+	br = branch
+	co = checkout
+	pl = pull
+	ps = push
