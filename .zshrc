@@ -49,15 +49,6 @@ else
 fi
 
 
-#
-# find => fd
-#
-if type "fd" >/dev/null 2>&1; then
-	# alias find='fd'
-else
-	echo "\"fd\" is not installed"
-fi
-
 if type "xsel" >/dev/null 2>&1; then
 	alias pbcopy='xsel --clipboard --input'
 else
