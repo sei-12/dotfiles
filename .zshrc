@@ -32,7 +32,6 @@ alias d='cd ~/Documents'
 alias dot='code ~/dotfiles'
 alias C='code .'
 alias sc-sh='maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png'
-alias tree='tree -I .git -I node_modules'
 
 #
 # vim => nvim
@@ -93,13 +92,22 @@ else
 fi
 
 #
-# ls => ex
+# ls => exa
+# tree => exa
 #
 if type "exa" >/dev/null 2>&1; then
 	alias l='exa -1 --icons -a'
+	alias tree='exa -T'
 else
 	alias l='ls -a'
 	echo "\"exa\" is not installed"
+fi
+
+
+if type "tree" >/dev/null 2>&1; then
+
+else
+	echo "\"tree\" not found"
 fi
 
 #
