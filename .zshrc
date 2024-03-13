@@ -87,8 +87,8 @@ fi
 # tree => exa
 #
 if type "exa" >/dev/null 2>&1; then
-	alias l='exa -1 --icons -a'
-	alias tree='exa -T'
+	alias l='exa --icons -a'
+	alias tree='exa -T --icons --git-ignore -a'
 else
 	alias l='ls -a'
 	echo "\"exa\" is not installed"
