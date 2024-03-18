@@ -24,7 +24,6 @@ eval "$(starship init zsh)"
 #                                               ALIAS                                                #
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
-alias ls='echo "ｌを使え！！！"'
 alias gits='git status --short --branch'
 alias lg='\ls -a -1 | \rg'
 alias src='source ~/.zshrc'
@@ -88,9 +87,11 @@ fi
 #
 if type "exa" >/dev/null 2>&1; then
 	alias l='exa --icons -a'
+	alias ll='exa --icons -al'
 	alias tree='exa -T --icons --git-ignore -a'
 else
 	alias l='ls -a'
+	alias ll='ls -al'
 	echo "\"exa\" is not installed"
 fi
 
