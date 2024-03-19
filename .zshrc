@@ -87,6 +87,7 @@ fi
 #
 if type "exa" >/dev/null 2>&1; then
 	alias l='exa --icons -a'
+	alias ls='exa --icons'
 	alias ll='exa --icons -al'
 	alias tree='exa -T --icons --git-ignore -a'
 else
