@@ -208,16 +208,6 @@ bindsym $mod+ctrl+Shift+b exec --no-startup-id skin
 
 
 #
-# memo-kitty
-#
-set $memo_kitty_wm_class memo-kitty
-for_window [instance=$memo_kitty_wm_class] floating enable
-for_window [instance=$memo_kitty_wm_class] resize set 80ppt 80ppt
-for_window [instance=$memo_kitty_wm_class] move position center
-bindsym $mod+m exec kitty --class $memo_kitty_wm_class quick-memo.sh
-
-
-#
 # Input Method
 #
 exec --no-startup-id ibus-daemon -drxR
