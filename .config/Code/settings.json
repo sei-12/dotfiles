@@ -7,7 +7,6 @@
     "editor.smoothScrolling": true,
     "explorer.compactFolders": false,
     "extensions.ignoreRecommendations": true,
-    "files.autoSave": "afterDelay",
     "editor.fontFamily": "Hack Nerd Font Bold",
     "workbench.startupEditor": "none",
     "git.openRepositoryInParentFolders": "never",
@@ -41,5 +40,6 @@
         "asvetliakov.vscode-neovim": 1
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "workbench.colorTheme": "Palenight (Mild Contrast)"
+    "workbench.colorTheme": "Palenight (Mild Contrast)",
+    "files.autoSave": "afterDelay"
 }

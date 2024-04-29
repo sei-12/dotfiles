@@ -1,5 +1,6 @@
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.relativenumber = true
+vim.opt.tabstop = 4
 
 vim.api.nvim_set_keymap('n','#','*Nciw',{noremap = true})
 vim.api.nvim_set_keymap('n','<space>','i<space><ESC>l',{noremap = true})
