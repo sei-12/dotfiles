@@ -81,12 +81,28 @@
 alt + shift - u : yabai -m window --space prev
 alt + shift - i : yabai -m window --space next
 
-alt - j : ~/dotfiles/.config/yabai/next_window.py prev
-alt - k : ~/dotfiles/.config/yabai/next_window.py next
+alt - j : yabai -m window --focus south
+alt - h : yabai -m window --focus west
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
 
-alt - n : open -n /Applications/iTerm.app
+alt + shift - j : yabai -m window --swap south
+alt + shift - h : yabai -m window --swap west
+alt + shift - k : yabai -m window --swap north
+alt + shift - l : yabai -m window --swap east
+
+alt - m : ~/dotfiles/.config/yabai/next_window.py next
+
+alt - z : ~/dotfiles/.config/yabai/iterm_scratchpad.py
 alt - x : open /Applications/Google\ Chrome.app
 
+alt - f : yabai -m window --toggle zoom-parent
+alt - t : yabai -m window --toggle float --grid 8:8:1:1:6:6
+
+alt + cmd - h: yabai -m window --resize left:-50:0 || yabai -m window --resize right:-50:0
+alt + cmd - l: yabai -m window --resize right:50:0 || yabai -m window --resize left:50:0
+
+# alt + shift - f : 
 # swap managed window
 # shift + alt - h : yabai -m window --swap north
 
