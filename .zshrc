@@ -91,9 +91,16 @@ if type "exa" >/dev/null 2>&1; then
 	alias ll='exa --icons -al'
 	alias tree='exa -T --icons --git-ignore -a'
 else
-	alias l='ls -a'
-	alias ll='ls -al'
-	echo "\"exa\" is not installed"
+	if type "eza" >/dev/null 2>&1; then
+		alias l='eza --icons -a'
+		alias ls='eza --icons'
+		alias ll='eza --icons -al'
+		alias tree='eza -T --icons --git-ignore -a'
+	else
+		alias l='ls -a'
+		alias ll='ls -al'
+		echo "\"exa\" or \"eza\" is not installed"
+	fi
 fi
 
 
