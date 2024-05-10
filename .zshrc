@@ -48,10 +48,14 @@ else
 fi
 
 
-if type "xsel" >/dev/null 2>&1; then
-	alias pbcopy='xsel --clipboard --input'
+
+if type "pbcopy" >/dev/null 2>&1; then
 else
-	echo "\"xsel\" is not installed"
+	if type "xsel" >/dev/null 2>&1; then
+		alias pbcopy='xsel --clipboard --input'
+	else
+		echo "\"xsel\" is not installed"
+	fi
 fi
 
 #
@@ -154,10 +158,10 @@ function cd() {
 #                                              KEYBIND                                               #
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
-bindkey '^[OD' backward-kill-word
-bindkey '^[OC' forward-word
-bindkey '^[OA' history-substring-search-up
-bindkey '^[OB' history-substring-search-down
+bindkey '^b' backward-kill-word
+bindkey '^f' forward-word
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
 
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
@@ -207,7 +211,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey '^e' edit-command-line
 
 setopt no_beep
 
