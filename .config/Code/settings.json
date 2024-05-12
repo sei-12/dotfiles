@@ -29,7 +29,7 @@
         "error",
         "warning"
     ],
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "vim.surround": true,
