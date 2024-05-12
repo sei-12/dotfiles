@@ -40,6 +40,6 @@
         "asvetliakov.vscode-neovim": 1
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "workbench.colorTheme": "Palenight (Mild Contrast)",
+    "workbench.colorTheme": "Ayu Mirage",
     "files.autoSave": "afterDelay"
 }
