@@ -40,7 +40,7 @@ if cur_space_id != iterm_data["space"]:
     subprocess.run(f"yabai -m window {window_id} --space {cur_space_id}",shell=True,stdout=subprocess.PIPE)
 
 if iterm_data["has-focus"]:
-    subprocess.run(f"yabai -m window {window_id} --space 6",shell=True,stdout=subprocess.PIPE)
+    subprocess.run(f"yabai -m window {window_id} --space 1",shell=True,stdout=subprocess.PIPE)
     any_id = get_any_window_id()
     if any_id != None:
         subprocess.run(f"yabai -m window --focus {any_id}",shell=True,stdout=subprocess.PIPE)
