@@ -11,7 +11,6 @@
     "workbench.startupEditor": "none",
     "git.openRepositoryInParentFolders": "never",
     "editor.fontWeight": "600",
-    "editor.fontSize": 13,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "security.workspace.trust.untrustedFiles": "open",
@@ -29,7 +28,6 @@
         "error",
         "warning"
     ],
-    "window.zoomLevel": 0,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "vim.surround": true,
