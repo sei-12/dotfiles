@@ -98,6 +98,7 @@ alt - l : yabai -m window --grid 8:8:4:0:4:8
 alt - k : yabai -m window --grid 1:1:0:0:1:1
 alt - j : yabai -m window --grid 8:10:2:0:6:8
 alt - t : yabai -m window --grid 8:8:1:1:6:6
+alt - m : yabai -m window --grid 8:8:4:4:4:4
 
 # alt - m : ~/dotfiles/.config/yabai/next_window.py next
 
