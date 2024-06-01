@@ -4,10 +4,6 @@
     // VSCODE
     // 
     {
-        "key": "ctrl+shift+n",
-        "command": "workbench.action.moveEditorToNewWindow"
-    },
-    {
         "key": "cmd+n",
         "command": "explorer.newFile"
     },
@@ -107,6 +103,45 @@
         "key": "ctrl+shift+i",
         "command": "-workbench.action.toggleDevTools",
         "when": "isDevelopment"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.moveEditorToRightGroup"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.focusNextGroup",
+        "when": "!editorTextFocus && !filesExplorerFocus && !inSearchEditor && !replaceInputBoxFocus && !searchViewletFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+w ctrl+w",
+        "command": "-workbench.action.focusNextGroup",
+        "when": "!editorTextFocus && !filesExplorerFocus && !inSearchEditor && !replaceInputBoxFocus && !searchViewletFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "cmd+k h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "cmd+k cmd+left",
+        "command": "-workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "cmd+k l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "cmd+k cmd+right",
+        "command": "-workbench.action.focusRightGroup"
     }
-    // いらない
 ]
