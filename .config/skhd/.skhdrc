@@ -76,11 +76,11 @@
 # A REFERENCE ONLY, WHEN MAKING YOUR OWN CONFIGURATION..          #
 # ############################################################### #
 
-# focus window
-
+# move space window
 alt + shift - u : yabai -m window --space prev
 alt + shift - i : yabai -m window --space next
 
+# move and resize window
 alt - h : yabai -m window --grid 8:8:0:0:4:8
 alt - l : yabai -m window --grid 8:8:4:0:4:8
 alt - j : yabai -m window --grid 8:8:2:0:4:8
@@ -88,3 +88,6 @@ alt - k : yabai -m window --grid 1:1:0:0:1:1
 
 # term
 alt - t : yabai -m window --grid 8:8:1:1:6:6
+alt - z : open -a iTerm
+alt - return : open -na iTerm
+
