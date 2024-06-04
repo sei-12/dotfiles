@@ -32,7 +32,7 @@ yabai -m config                                 \
     split_ratio                  0.5          \
     split_type                   auto           \
     auto_balance                 off            \
-    top_padding                  25             \
+    top_padding                  60             \
     bottom_padding               25            \
     left_padding                 25             \
     right_padding                25             \
