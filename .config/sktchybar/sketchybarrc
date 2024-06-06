@@ -101,33 +101,57 @@ sketchybar --add item clock right \
            --subscribe battery system_woke power_source_change
 
 ##### Flow Plugin #####
-sketchybar --add item flow right \
-           --set flow update_freq=1 \
-        	      script="$PLUGIN_DIR/flow.sh" \
-	              click_script="sketchybar -m --set flow popup.drawing=toggle" \
-	              popup.background.border_width=3 \
-                      popup.background.corner_radius=4 \
-                      popup.background.border_color=0xCC00008B \
-		      popup.background.color=0xCC5195E1 \
-		      popup.horizontal=on \
-		      popup.align=center \
-		      \
-	   --add item flow.start popup.flow \
-	   --set flow.start label="Start" \
-	                    click_script="osascript -e 'tell application \"Flow\" to start' ; sketchybar -m --set flow popup.drawing=toggle" \
-	   		    \
-	   --add item flow.stop popup.flow \
-	   --set flow.stop label="Stop" \
-	                   click_script="osascript -e 'tell application \"Flow\" to stop' ; sketchybar -m --set flow popup.drawing=toggle" \
-	   		   \
-	   --add item flow.skip popup.flow \
-	   --set flow.skip label="Skip" \
-	                   click_script="osascript -e 'tell application \"Flow\" to skip' ; sketchybar -m --set flow popup.drawing=toggle" \
-			   \
-	   --add item flow.reset popup.flow \
-	   --set flow.reset label="Reset" \
-	                   click_script="osascript -e 'tell application \"Flow\" to reset' ; sketchybar -m --set flow popup.drawing=toggle"
+# sketchybar --add item flow right \
+#            --set flow update_freq=1 \
+#         	      script="$PLUGIN_DIR/flow.sh" \
+# 	              click_script="sketchybar -m --set flow popup.drawing=toggle" \
+# 	              popup.background.border_width=3 \
+#                       popup.background.corner_radius=4 \
+#                       popup.background.border_color=0xCC00008B \
+# 		      popup.background.color=0xCC5195E1 \
+# 		      popup.horizontal=on \
+# 		      popup.align=center \
+# 		      \
+# 	   --add item flow.start popup.flow \
+# 	   --set flow.start label="Start" \
+# 	                    click_script="osascript -e 'tell application \"Flow\" to start' ; sketchybar -m --set flow popup.drawing=toggle" \
+# 	   		    \
+# 	   --add item flow.stop popup.flow \
+# 	   --set flow.stop label="Stop" \
+# 	                   click_script="osascript -e 'tell application \"Flow\" to stop' ; sketchybar -m --set flow popup.drawing=toggle" \
+# 	   		   \
+# 	   --add item flow.skip popup.flow \
+# 	   --set flow.skip label="Skip" \
+# 	                   click_script="osascript -e 'tell application \"Flow\" to skip' ; sketchybar -m --set flow popup.drawing=toggle" \
+# 			   \
+# 	   --add item flow.reset popup.flow \
+# 	   --set flow.reset label="Reset" \
+# 	                   click_script="osascript -e 'tell application \"Flow\" to reset' ; sketchybar -m --set flow popup.drawing=toggle"
 
+sketchybar --add item browser right \
+           --set browser icon= \
+           click_script="osascript ~/dotfiles/scripts/google-chrome/open_new_window.scpt"\
+            icon.y_offset=-1\
+           icon.color=0xff8B9DCC icon.font="Hack Nerd Font:Bold:20.0"\
+           icon.padding_left=0 icon.padding_right=0 padding_left=2 padding_right=1
 
+sketchybar --add item term right\
+           --set term icon=\
+            click_script="osascript ~/dotfiles/scripts/iterm/open_new_window.scpt"\
+           icon.color=0xff8B9DCC icon.font="Hack Nerd Font:Bold:26.0"\
+           icon.padding_left=0 icon.padding_right=0 padding_left=2 padding_right=1
+
+sketchybar --add item music right\
+           --set music icon=\
+            click_script="open -a Music.app"\
+           icon.color=0xff8B9DCC icon.font="Hack Nerd Font:Bold:21.0"\
+           icon.padding_left=0 icon.padding_right=0 padding_left=1 padding_right=1
+
+sketchybar --add item setting right\
+           --set setting icon=\
+            click_script="open -a 'System Settings'"\
+            icon.y_offset=-1\
+           icon.color=0xff8B9DCC icon.font="Hack Nerd Font:Bold:20.0"\
+           icon.padding_left=0 icon.padding_right=0 padding_left=2 padding_right=0
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

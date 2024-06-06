@@ -91,6 +91,11 @@ alt - p : yabai -m window --grid 10:10:7:0:3:5
 
 # term
 alt - t : yabai -m window --grid 8:8:1:1:6:6
-alt - z : open -a iTerm
 alt - return : osascript ~/dotfiles/scripts/iterm/open_new_window.scpt
+
+# browser
+alt + shift - return : osascript ~/dotfiles/scripts/google-chrome/open_new_window.scpt
+
+# close
+alt - w : yabai -m window --close
 
