@@ -80,31 +80,22 @@
 alt + shift - u : yabai -m window --space prev
 alt + shift - i : yabai -m window --space next
 
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
-
-# swap window
-shift + alt - h : yabai -m window --swap west
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - l : yabai -m window --swap east
-
-# move window
-alt + cmd - h : yabai -m window --warp west
-alt + cmd - j : yabai -m window --warp south
-alt + cmd - k : yabai -m window --warp north
-alt + cmd - l : yabai -m window --warp east
+# move and resize window
+alt - h : yabai -m window --grid 8:8:0:0:4:8
+alt - l : yabai -m window --grid 8:8:4:0:4:8
+alt - k : yabai -m window --grid 10:10:7:0:3:10
+alt - j : yabai -m window --grid 10:10:0:0:7:10
+alt - f : yabai -m window --grid 1:1:0:0:1:1
+alt - n : yabai -m window --grid 10:10:7:5:3:5
+alt - p : yabai -m window --grid 10:10:7:0:3:5
 
 # term
+alt - t : yabai -m window --grid 8:8:1:1:6:6
 alt - return : osascript ~/dotfiles/scripts/iterm/open_new_window.scpt
 
 # browser
 alt + shift - return : osascript ~/dotfiles/scripts/google-chrome/open_new_window.scpt
 
-# close & focus
-alt - w : yabai -m window --close && yabai -m window --focus $(yabai -m query --windows --space | jq -r '.[] | select(.["is-minimized"] == false) | .id' | head -n 1)
+# close
+alt - w : yabai -m window --close
 
-# minimize & focus
-alt - m : yabai -m window --minimize && yabai -m window --focus $(yabai -m query --windows --space | jq -r '.[] | select(.["is-minimized"] == false) | .id' | head -n 1)
