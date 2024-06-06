@@ -105,10 +105,6 @@
         "when": "isDevelopment"
     },
     {
-        "key": "ctrl+shift+n",
-        "command": "workbench.action.moveEditorToRightGroup"
-    },
-    {
         "key": "ctrl+tab",
         "command": "workbench.action.focusNextGroup",
         "when": "!editorTextFocus && !filesExplorerFocus && !inSearchEditor && !replaceInputBoxFocus && !searchViewletFocus && !terminalFocus && neovim.mode != 'cmdline'"
@@ -143,5 +139,9 @@
     {
         "key": "cmd+k cmd+right",
         "command": "-workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.moveEditorToNewWindow"
     }
 ]
