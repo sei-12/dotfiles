@@ -143,5 +143,13 @@
     {
         "key": "ctrl+shift+n",
         "command": "workbench.action.moveEditorToNewWindow"
+    },
+    {
+        "key": "shift+cmd+n",
+        "command": "-workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.moveEditorToLeftGroup"
     }
 ]
