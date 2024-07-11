@@ -84,6 +84,7 @@ alt + shift - i : yabai -m window --space next
 alt - h    : yabai -m window --grid 8:8:0:0:4:8
 alt - l    : yabai -m window --grid 8:8:4:0:4:8
 alt - f    : yabai -m window --grid 1:1:0:0:1:1
+alt - g    : yabai -m window --grid 8:8:2:0:4:8
 
 
 alt - k    : yabai -m window --grid 10:10:7:0:3:10
@@ -93,15 +94,15 @@ alt - 0x21 : yabai -m window --grid 10:10:7:0:3:5
 alt - n    : yabai -m window --grid 10:10:0:5:7:5
 alt - p    : yabai -m window --grid 10:10:0:0:7:5
 
-
+alt - o : open -a 'Obsidian'
 
 # term
 alt - t : yabai -m window --grid 8:8:2:1:4:4
 
-alt - return : osascript ~/dotfiles/scripts/iterm/open_new_window.scpt
+alt - return : osascript ~/dotfiles/scripts/iterm/open_new_window.scpt && yabai -m window --grid 8:8:2:1:4:4
 
 # browser
-alt + shift - return : osascript ~/dotfiles/scripts/google-chrome/open_new_window.scpt
+alt + shift - return : osascript ~/dotfiles/scripts/google-chrome/open_new_window.scpt && yabai -m window --grid 8:8:4:0:4:8
 
 # close
 alt - w : yabai -m window --close

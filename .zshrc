@@ -31,6 +31,7 @@ alias d='cd ~/Documents'
 alias dot='code ~/dotfiles'
 alias C='code .'
 alias sc-sh='maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png'
+alias brew_update='brew upgrade --cask --greedy && brew update && brew upgrade && brew cleanup'
 
 #
 # vim => nvim
