@@ -39,5 +39,7 @@
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
     "workbench.colorTheme": "Ayu Mirage",
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "liveServer.settings.donotVerifyTags": true,
+    "window.zoomLevel": 1
 }
