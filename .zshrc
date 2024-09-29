@@ -19,6 +19,19 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
+CD_HISTFILE="$HOME/.cache/cd_history_file.txt"
+CD_HISTSIZE=100
+
+function chpwd_add_cd_hist(){
+	CUR_DIR="$(pwd)"	
+	cd_history_manager add --histfile $CD_HISTFILE --histsize $CD_HISTSIZE -a $CUR_DIR
+}
+function print_cd_history(){
+	cd_history_manager print --histfile $CD_HISTFILE
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook chpwd chpwd_add_cd_hist
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
 #                                               ALIAS                                                #
@@ -126,13 +139,13 @@ fi
 
 if type "fd" >/dev/null 2>&1; then
 	function c() {
-		cd "$(fd . ~ -t d -H | fzf)"
+		cd "$( {print_cd_history; fd . ~ -t d -H} | fzf --no-sort)"
 	}
 	function cr() {
-		cd "$(fd . / -t d -H | fzf)"
+		cd "$(fd . / -t d -H | fzf --no-sort)"
 	}
 	function c.() {
-		cd "$(fd -t d -H | fzf)"
+		cd "$(fd -t d -H | fzf --no-sort)"
 	}
 else
 	source $HOME/dotfiles/zsh_files/find_fzf_cd.zsh
@@ -151,7 +164,7 @@ function mkcd() {
 }
 
 function cd() {
-	builtin cd $@ && l
+	builtin cd $@ && pwd && l
 }
 
 #----------------------------------------------------------------------------------------------------#
