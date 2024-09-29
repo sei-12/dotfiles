@@ -155,10 +155,6 @@ if type "kitty" >/dev/null 2>&1; then
 	alias icat='kitty kitten icat'
 fi
 
-function rand() {
-	cat /dev/urandom | tr -dc 'a-z' | fold -w $1 | head -n 1
-}
-
 function mkcd() {
 	mkdir $1 && cd $1
 }
