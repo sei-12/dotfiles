@@ -38,8 +38,8 @@
         "asvetliakov.vscode-neovim": 1
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "workbench.colorTheme": "Ayu Mirage",
     "files.autoSave": "afterDelay",
     "liveServer.settings.donotVerifyTags": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Ayu Mirage"
 }
