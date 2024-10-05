@@ -163,7 +163,7 @@
         "when": "editorFocus || editorIsOpen"
     },
     {
-        "key": "cmd+k cmd+1",
+        "key": "cmd+f",
         "command": "editor.foldLevel1",
         "when": "editorTextFocus && foldingEnabled"
     },

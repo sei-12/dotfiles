@@ -41,5 +41,15 @@
     "files.autoSave": "afterDelay",
     "liveServer.settings.donotVerifyTags": true,
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Ayu Mirage"
+    "workbench.colorTheme": "Ayu Mirage",
+
+    "multiCommand.commands": [
+        {
+            "command": "my.fold.level1",
+            "sequence": [
+                "cursorBottom",
+                "editor.foldLevel1"
+            ]
+        }
+    ]
 }
