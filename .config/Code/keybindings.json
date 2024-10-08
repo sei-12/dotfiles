@@ -141,16 +141,8 @@
         "command": "-workbench.action.focusRightGroup"
     },
     {
-        "key": "ctrl+shift+n",
-        "command": "workbench.action.moveEditorToNewWindow"
-    },
-    {
         "key": "shift+cmd+n",
         "command": "-workbench.action.newWindow"
-    },
-    {
-        "key": "ctrl+shift+n",
-        "command": "workbench.action.moveEditorToLeftGroup"
     },
     {
         "key": "cmd+k cmd+0",
@@ -173,7 +165,7 @@
         "when": "editorTextFocus && foldingEnabled"
     },
     {
-        "key": "cmd+f",
-        "command": "editor.foldAll"
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.moveEditorToRightGroup"
     }
 ]
