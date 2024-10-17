@@ -39,27 +39,11 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+m",
-        "command": "bookmarks.toggle",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+alt+k",
         "command": "-bookmarks.toggle",
         "when": "editorTextFocus"
     },
     // タブ移動
-    {
-        "key": "ctrl+shift+i",
-        "command": "workbench.action.nextEditor"
-    },
-    {
-        "key": "ctrl+shift+u",
-        "command": "workbench.action.previousEditor"
-    },
-    //
-    // Show Hover (ctrl + shift + h)
-    //
     {
         "key": "ctrl+shift+h",
         "command": "editor.action.showHover",
@@ -125,7 +109,7 @@
         "when": "!activeEditorGroupEmpty"
     },
     {
-        "key": "cmd+k h",
+        "key": "ctrl+u",
         "command": "workbench.action.focusLeftGroup"
     },
     {
@@ -133,7 +117,7 @@
         "command": "-workbench.action.focusLeftGroup"
     },
     {
-        "key": "cmd+k l",
+        "key": "ctrl+i",
         "command": "workbench.action.focusRightGroup"
     },
     {
@@ -165,7 +149,42 @@
         "when": "editorTextFocus && foldingEnabled"
     },
     {
+        "key": "ctrl+shift+u",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "cmd+k alt+cmd+left",
+        "command": "-workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "cmd+k alt+cmd+right",
+        "command": "-workbench.action.nextEditorInGroup"
+    },
+    {
         "key": "ctrl+shift+n",
         "command": "workbench.action.moveEditorToRightGroup"
+    },
+    {
+        "key": "cmd+k cmd+l",
+        "command": "-editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "cmd+k cmd+j",
+        "command": "-editor.unfoldAll",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "cmd+k cmd+m",
+        "command": "-workbench.action.toggleMaximizeEditorGroup",
+        "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "workbench.action.toggleMaximizeEditorGroup"
     }
 ]
