@@ -109,17 +109,30 @@
         "when": "!activeEditorGroupEmpty"
     },
     {
-        "key": "ctrl+u",
-        "command": "workbench.action.focusLeftGroup"
-    },
-    {
         "key": "cmd+k cmd+left",
         "command": "-workbench.action.focusLeftGroup"
     },
+
+    // workbench.action.focus Group
+    // ctrl (+shift) + arrow
     {
-        "key": "ctrl+i",
+        "key": "ctrl+shift+left",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+shift+right",
         "command": "workbench.action.focusRightGroup"
     },
+    {
+        "key": "ctrl+left",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    
+
     {
         "key": "cmd+k cmd+right",
         "command": "-workbench.action.focusRightGroup"
@@ -149,16 +162,8 @@
         "when": "editorTextFocus && foldingEnabled"
     },
     {
-        "key": "ctrl+shift+u",
-        "command": "workbench.action.previousEditorInGroup"
-    },
-    {
         "key": "cmd+k alt+cmd+left",
         "command": "-workbench.action.previousEditorInGroup"
-    },
-    {
-        "key": "ctrl+shift+i",
-        "command": "workbench.action.nextEditorInGroup"
     },
     {
         "key": "cmd+k alt+cmd+right",
