@@ -99,6 +99,7 @@ alt - o : open -a 'Obsidian'
 alt - m : open -a "Music"
 alt - n : open -a "Mission Control"
 alt - s : open -a "Safari"
+alt - z : open -a "Raindrop.io.app" && yabai -m window --grid 8:8:2:1:4:4
 
 # term
 alt - t : yabai -m window --grid 8:8:2:1:4:4
