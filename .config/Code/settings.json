@@ -28,8 +28,6 @@
         "error",
         "warning"
     ],
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
     "vim.surround": true,
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
