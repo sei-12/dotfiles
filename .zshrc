@@ -53,6 +53,9 @@ alias C='code .'
 alias sc-sh='maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png'
 alias brew_update='brew upgrade --cask --greedy && brew update && brew upgrade && brew cleanup'
 
+# ちょっとしたメモとかをいますぐ適当な場所に保存したい！って時に使う
+alias paste_to_cache='echo -n "File Name:"; read ptc_file_name; mkdir -p ~/.cache/ptc_memo; pbpaste > ~/.cache/ptc_memo/$ptc_file_name'
+
 #
 # vim => nvim
 #
