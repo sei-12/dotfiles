@@ -38,7 +38,6 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "files.autoSave": "afterDelay",
     "liveServer.settings.donotVerifyTags": true,
-    "window.zoomLevel": 1,
     "workbench.colorTheme": "Ayu Mirage",
     "multiCommand.commands": [
         {
@@ -48,5 +47,6 @@
                 "editor.foldLevel1"
             ]
         }
-    ]
+    ],
+    "window.zoomLevel": 1
 }

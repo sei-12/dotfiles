@@ -44,16 +44,28 @@ add-zsh-hook chpwd chpwd_add_cd_hist
 #                                               ALIAS                                                #
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
+
+#
+# 結構使ってる
+#
+alias d='cd ~/Documents'
+alias C='code .'
+alias brew_update='brew upgrade --cask --greedy && brew update && brew upgrade && brew cleanup'
+
+#
+# 追加したはいいけど使ってない
+#
 alias gits='git status --short --branch'
 alias lg='\ls -a -1 | \rg'
 alias src='source ~/.zshrc'
-alias d='cd ~/Documents'
 alias dot='code ~/dotfiles'
-alias C='code .'
 alias sc-sh='maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png'
-alias brew_update='brew upgrade --cask --greedy && brew update && brew upgrade && brew cleanup'
 
-# ちょっとしたメモとかをいますぐ適当な場所に保存したい！って時に使う
+#
+# 追加してみる
+#
+alias cp_history="history 0 | awk '{\$1=\"\";print substr(\$0,2)}' | fzf |pbcopy"
+## ちょっとしたメモとかをいますぐ適当な場所に保存したい！って時に使う
 alias paste_to_cache='echo -n "File Name:"; read ptc_file_name; mkdir -p ~/.cache/ptc_memo; pbpaste > ~/.cache/ptc_memo/$ptc_file_name'
 
 #
