@@ -1,3 +1,31 @@
+#----------------------------------------------------------------------------------------------------#
+#                                                                                                    #
+#                                                VAR                                                 #
+#                                                                                                    #
+#----------------------------------------------------------------------------------------------------#
+
+if [ "$(uname)" = 'Darwin' ]; then
+  OS='Mac'
+elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
+  OS='Linux'
+elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then                                                                                           
+  OS='Cygwin'
+else
+  echo "Your platform ($(uname -a)) is not supported."
+  exit 1
+fi
+
+# 今は一旦この書き方でいい
+PKG_MANAGER="brew"
+if [ $OS = "Mac" ]; then
+	PKG_MANAGER="brew"
+elif [ $OS = "Linux" ]; then
+	PKG_MANAGER="apt"
+fi
+
+
+
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
@@ -50,23 +78,36 @@ add-zsh-hook chpwd chpwd_add_cd_hist
 #
 alias d='cd ~/Documents'
 alias C='code .'
-alias brew_update='brew upgrade --cask --greedy && brew update && brew upgrade && brew cleanup'
+
+if [ $PKG_MANAGER = "brew" ]; then
+	function brew_update(){
+		echo "\"update_pkgs\" に変更しました"
+		return 1
+	}
+
+	alias update_pkgs='brew upgrade --cask --greedy && brew update && brew upgrade && brew cleanup'
+fi
 
 #
 # 追加したはいいけど使ってない
 #
-alias gits='git status --short --branch'
 alias lg='\ls -a -1 | \rg'
-alias src='source ~/.zshrc'
-alias dot='code ~/dotfiles'
+alias dot='cd ~/dotfiles && code ~/dotfiles'
 alias sc-sh='maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png'
+alias cp_history="history 0 | awk '{\$1=\"\";print substr(\$0,2)}' | fzf |pbcopy"
+## ちょっとしたメモとかをいますぐ適当な場所に保存したい！って時に使う
+alias paste_to_cache='echo -n "File Name:"; read ptc_file_name; mkdir -p ~/.cache/ptc_memo; pbpaste > ~/.cache/ptc_memo/$ptc_file_name'
 
 #
 # 追加してみる
 #
-alias cp_history="history 0 | awk '{\$1=\"\";print substr(\$0,2)}' | fzf |pbcopy"
-## ちょっとしたメモとかをいますぐ適当な場所に保存したい！って時に使う
-alias paste_to_cache='echo -n "File Name:"; read ptc_file_name; mkdir -p ~/.cache/ptc_memo; pbpaste > ~/.cache/ptc_memo/$ptc_file_name'
+# restart あんまり使わなかったら res -> restart にする
+alias re='exec zsh'
+
+if [ $OS = "Mac" ]; then
+	# finderを開く
+	alias F="open ."
+fi
 
 #
 # vim => nvim

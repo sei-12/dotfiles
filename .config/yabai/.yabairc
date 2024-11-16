@@ -13,13 +13,15 @@
 
     # mouse_follows_focus          on            \
     # focus_follows_mouse          autofocus            \
+    # mouse_follows_focus          off            \
+    # focus_follows_mouse          off            \
     
 # global settings
 yabai -m config                                 \
     external_bar                 off:40:0       \
     menubar_opacity              1.0            \
-    mouse_follows_focus          off            \
-    focus_follows_mouse          off            \
+    mouse_follows_focus          on            \
+    focus_follows_mouse          autofocus            \
     display_arrangement_order    default        \
     window_origin_display        default        \
     window_placement             second_child   \
