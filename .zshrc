@@ -57,7 +57,7 @@ CD_HISTSIZE=100
 
 function chpwd_add_cd_hist(){
 	CUR_DIR="$(pwd)"	
-	cd_history_manager add --histfile $CD_HISTFILE --histsize $CD_HISTSIZE -a $CUR_DIR
+	cd_history_manager add --histfile $CD_HISTFILE --histsize $CD_HISTSIZE -a "$CUR_DIR/"
 }
 function print_cd_history(){
 	cd_history_manager print --histfile $CD_HISTFILE
