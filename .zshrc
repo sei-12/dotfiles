@@ -104,6 +104,7 @@ alias cp_history="history 0 | awk '{\$1=\"\";print substr(\$0,2)}' | fzf |pbcopy
 #
 alias re='exec zsh'
 alias gcb='git checkout -b'
+alias rm_dup="awk '!seen[\$0]++'"
 
 if [ $OS = "Mac" ]; then
 	# finderを開く
@@ -203,7 +204,7 @@ fi
 
 if type "fd" >/dev/null 2>&1; then
 	function c() {
-		cd "$( {print_cd_history; fd . ~ -t d -H} | fzf --no-sort)"
+		cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf --no-sort)"
 	}
 	function cr() {
 		cd "$(fd . / -t d -H | fzf --no-sort)"
