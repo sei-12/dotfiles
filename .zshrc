@@ -88,21 +88,22 @@ if [ $PKG_MANAGER = "brew" ]; then
 	alias update_pkgs='brew upgrade --cask --greedy && brew update && brew upgrade && brew cleanup'
 fi
 
+## ちょっとしたメモとかをいますぐ適当な場所に保存したい！って時に使う
+alias paste_to_cache='echo -n "File Name:"; read ptc_file_name; mkdir -p ~/.cache/ptc_memo; pbpaste > ~/.cache/ptc_memo/$ptc_file_name'
+alias dot='cd ~/dotfiles && code ~/dotfiles'
+
 #
 # 追加したはいいけど使ってない
 #
 alias lg='\ls -a -1 | \rg'
-alias dot='cd ~/dotfiles && code ~/dotfiles'
 alias sc-sh='maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png'
 alias cp_history="history 0 | awk '{\$1=\"\";print substr(\$0,2)}' | fzf |pbcopy"
-## ちょっとしたメモとかをいますぐ適当な場所に保存したい！って時に使う
-alias paste_to_cache='echo -n "File Name:"; read ptc_file_name; mkdir -p ~/.cache/ptc_memo; pbpaste > ~/.cache/ptc_memo/$ptc_file_name'
 
 #
 # 追加してみる
 #
-# restart あんまり使わなかったら res -> restart にする
 alias re='exec zsh'
+alias gcb='git checkout -b'
 
 if [ $OS = "Mac" ]; then
 	# finderを開く
@@ -220,7 +221,11 @@ fi
 
 function gen_password(){
 	LENGTH=${1:-16}
-	cat /dev/urandom | fold -w 256 | head -n 1 | shasum -a 256 | base64 | fold -w $LENGTH | head -n 1
+	cat /dev/urandom | fold -w 256 | head -n 1 | shasum -a 256 | fold -w $LENGTH | head -n 1
+}
+
+function uuid(){
+	uuidgen | xargs -I {} echo -n {} | pbcopy
 }
 
 function mkcd() {
