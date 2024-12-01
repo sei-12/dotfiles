@@ -10,6 +10,11 @@ alt - l    : yabai -m window --grid 8:8:4:0:4:8
 alt - f    : yabai -m window --grid 1:1:0:0:1:1
 alt - g    : yabai -m window --grid 8:8:2:0:4:8
 
+alt + shift - j       : yabai -m window --grid 8:8:0:0:4:4
+alt + shift - k       : yabai -m window --grid 8:8:4:0:4:4
+alt + shift - m       : yabai -m window --grid 8:8:0:4:4:4
+alt + shift - 0x2B    : yabai -m window --grid 8:8:4:4:4:4
+
 
 alt - k    : yabai -m window --grid 10:10:7:0:3:10
 alt - j    : yabai -m window --grid 10:10:0:0:7:10
@@ -25,8 +30,10 @@ alt - t : yabai -m window --grid 8:8:2:1:4:4
 
 alt - 0x2F : yabai -m display --focus east
 alt - 0x2B  : yabai -m display --focus west
-alt + shift - 0x2F : yabai -m window --display east; yabai -m display --focus east
-alt + shift - 0x2B  : yabai -m window --display west; yabai -m display --focus west
+
+# osをアップデートしてから動作しなくなった
+# alt + shift - 0x2F : yabai -m window --display east; yabai -m display --focus east
+# alt + shift - 0x2B  : yabai -m window --display west; yabai -m display --focus west
 
 alt - return : osascript ~/dotfiles/scripts/iterm/open_new_window.scpt && yabai -m window --grid 8:8:2:1:4:4
 
