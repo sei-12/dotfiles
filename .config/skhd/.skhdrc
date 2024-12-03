@@ -28,13 +28,6 @@ alt - d : open -a "DeepL"
 # term
 alt - t : yabai -m window --grid 8:8:2:1:4:4
 
-alt - 0x2F : yabai -m display --focus east
-alt - 0x2B  : yabai -m display --focus west
-
-# osをアップデートしてから動作しなくなった
-# alt + shift - 0x2F : yabai -m window --display east; yabai -m display --focus east
-# alt + shift - 0x2B  : yabai -m window --display west; yabai -m display --focus west
-
 alt - return : osascript ~/dotfiles/scripts/iterm/open_new_window.scpt && yabai -m window --grid 8:8:2:1:4:4
 
 # browser
