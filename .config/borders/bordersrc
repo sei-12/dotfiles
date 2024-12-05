@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# https://github.com/FelixKratz/JankyBorders
+#
 options=(
 	style=round
 	width=10.0
 	hidpi=on
+	blacklist="Tauri,skin"
 	active_color=0xff8b9ccc
 )
 
