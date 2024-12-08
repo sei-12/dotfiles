@@ -62,6 +62,9 @@ function chpwd_add_cd_hist(){
 function print_cd_history(){
 	cd_history_manager print --histfile $CD_HISTFILE
 }
+function get_last_work_dir(){
+	cd_history_manager print --histfile $CD_HISTFILE | head -n 1
+}
 
 autoload -Uz add-zsh-hook
 add-zsh-hook chpwd chpwd_add_cd_hist
@@ -336,3 +339,8 @@ function load-nvm(){
 
 # Created by `pipx` on 2024-09-01 09:14:26
 export PATH="$PATH:/Users/sei-12/.local/bin"
+
+
+# 試験的に追加してみる
+# ホームに移動するのは 'cd' だけでいいから問題はないだろうと考えてる
+builtin cd $(get_last_work_dir)
