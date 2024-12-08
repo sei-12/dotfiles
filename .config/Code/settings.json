@@ -12,7 +12,7 @@
     "git.openRepositoryInParentFolders": "never",
     "editor.fontWeight": "600",
     "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDragAndDrop": true,
     "security.workspace.trust.untrustedFiles": "open",
     "screencastMode.keyboardOptions": {
         "showSingleEditorCursorMoves": false

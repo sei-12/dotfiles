@@ -8,16 +8,14 @@ vim.cmd('highlight Normal guibg=none')
 -- vim.api.nvim_set_keymap('n','#','*Nciw',{noremap = true})
 -- vim.api.nvim_set_keymap('n','<space>','i<space><ESC>l',{noremap = true})
 
--- local Plug = vim.fn['plug#']
--- vim.call('plug#begin')
--- Plug 'tpope/vim-surround'
--- Plug 'tpope/vim-repeat'
--- Plug 'tpope/vim-commentary'
--- Plug 'junegunn/fzf'
--- Plug 'junegunn/fzf.vim'
--- Plug 'nvim-tree/nvim-tree.lua'
--- Plug 'nvim-tree/nvim-web-devicons'
--- vim.call('plug#end')
+local Plug = vim.fn['plug#']
+vim.call('plug#begin')
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'nvim-tree/nvim-web-devicons'
+vim.call('plug#end')
+
+-- "hello"
 
 -- -- disable netrw at the very start of your init.lua
 -- vim.g.loaded_netrw = 1
