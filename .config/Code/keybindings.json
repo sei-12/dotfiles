@@ -116,19 +116,19 @@
     // workbench.action.focus Group
     // ctrl (+shift) + arrow
     {
-        "key": "ctrl+shift+left",
+        "key": "ctrl+h",
         "command": "workbench.action.focusLeftGroup"
     },
     {
-        "key": "ctrl+shift+right",
+        "key": "ctrl+l",
         "command": "workbench.action.focusRightGroup"
     },
     {
-        "key": "ctrl+left",
+        "key": "ctrl+shift+tab",
         "command": "workbench.action.previousEditorInGroup"
     },
     {
-        "key": "ctrl+right",
+        "key": "ctrl+tab",
         "command": "workbench.action.nextEditorInGroup"
     },
     
