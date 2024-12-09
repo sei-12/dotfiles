@@ -1,6 +1,7 @@
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
+vim.opt.ignorecase = true
 
 vim.opt.termguicolors = true
 vim.cmd('highlight Normal guibg=none')
