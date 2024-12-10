@@ -38,7 +38,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "files.autoSave": "afterDelay",
     "liveServer.settings.donotVerifyTags": true,
-    "workbench.colorTheme": "Ayu Mirage",
+    "workbench.colorTheme": "Tokyo Night Storm Frameless",
     "multiCommand.commands": [
         {
             "command": "my.fold.level1",
