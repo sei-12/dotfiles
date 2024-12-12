@@ -261,6 +261,7 @@ _path=(
 	$HOME/.my-bin
 	$HOME/.local/bin
 	$HOME/.local/kitty.app/bin
+	$HOME/Documents/MyVault/tools
 )
 
 for dir in $_path; do

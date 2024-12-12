@@ -3,43 +3,30 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.ignorecase = true
 
-vim.opt.termguicolors = true
-vim.cmd('highlight Normal guibg=none')
+vim.cmd('syntax enable')
 
--- vim.api.nvim_set_keymap('n','#','*Nciw',{noremap = true})
--- vim.api.nvim_set_keymap('n','<space>','i<space><ESC>l',{noremap = true})
+vim.opt.langmenu = "en_US"
+vim.cmd("language en_US")
+
 
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 Plug 'tpope/vim-surround'
+Plug 'folke/tokyonight.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'https://github.com/vim-scripts/ScrollColors'
 vim.call('plug#end')
 
--- "hello"
+require("tokyonight").setup({
+    style = "night",          -- Tokyonightのスタイル ("night", "storm", "day", など)
+    transparent = true,       -- 背景色を透明にする
+    terminal_colors = true,   -- ターミナルのカラースキームを尊重
+})
+vim.cmd[[colorscheme tokyonight-storm]]
 
--- -- disable netrw at the very start of your init.lua
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+-- vim.opt.termguicolors = false
 
--- -- optionally enable 24-bit colour
--- vim.opt.termguicolors = true
+-- 
+-- vim.opt.background = dark
 
--- -- empty setup using defaults
--- require("nvim-tree").setup()
-
--- -- OR setup with some options
--- require("nvim-tree").setup({
---   sort = {
---     sorter = "case_sensitive",
---   },
---   view = {
---     width = 30,
---   },
---   renderer = {
---     group_empty = true,
---   },
---   filters = {
---     dotfiles = true,
---   },
--- })

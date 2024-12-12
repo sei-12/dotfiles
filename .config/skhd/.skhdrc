@@ -10,7 +10,7 @@ alt - l    : yabai -m window --grid 8:8:4:0:4:8
 alt - f    : yabai -m window --grid 1:1:0:0:1:1
 alt - g    : yabai -m window --grid 8:8:2:0:4:8
 
-alt - j    : yabai -m window --grid 8:8:0:0:2:8
+alt - j    : yabai -m window --grid 8:8:0:0:6:8
 alt - k    : yabai -m window --grid 8:8:6:0:2:8
 
 alt + shift - j       : yabai -m window --grid 8:8:0:0:4:4
