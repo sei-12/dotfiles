@@ -52,22 +52,23 @@ eval "$(starship init zsh)"
 #                                             CD HISTORY                                             #
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
-CD_HISTFILE="$HOME/.cache/cd_history_file.txt"
-CD_HISTSIZE=100
 
-function chpwd_add_cd_hist(){
-	CUR_DIR="$(pwd)"	
-	cd_history_manager add --histfile $CD_HISTFILE --histsize $CD_HISTSIZE -a "$CUR_DIR/"
-}
-function print_cd_history(){
-	cd_history_manager print --histfile $CD_HISTFILE
-}
-function get_last_work_dir(){
-	cd_history_manager print --histfile $CD_HISTFILE | head -n 1
-}
+# CD_HISTFILE="$HOME/.cache/cd_history_file.txt"
+# CD_HISTSIZE=100
 
-autoload -Uz add-zsh-hook
-add-zsh-hook chpwd chpwd_add_cd_hist
+# function chpwd_add_cd_hist(){
+# 	CUR_DIR="$(pwd)"	
+# 	cd_history_manager add --histfile $CD_HISTFILE --histsize $CD_HISTSIZE -a "$CUR_DIR/"
+# }
+# function print_cd_history(){
+# 	cd_history_manager print --histfile $CD_HISTFILE
+# }
+# function get_last_work_dir(){
+# 	cd_history_manager print --histfile $CD_HISTFILE | head -n 1
+# }
+
+# autoload -Uz add-zsh-hook
+# add-zsh-hook chpwd chpwd_add_cd_hist
 
 
 #----------------------------------------------------------------------------------------------------#
@@ -207,7 +208,8 @@ fi
 
 if type "fd" >/dev/null 2>&1; then
 	function c() {
-		cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf --no-sort)"
+		# cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf --no-sort)"
+		cd "$( {fd . ~ -t d -H} | rm_dup | fzf --no-sort)"
 	}
 	function cr() {
 		cd "$(fd . / -t d -H | fzf --no-sort)"
@@ -344,4 +346,5 @@ export PATH="$PATH:/Users/sei-12/.local/bin"
 
 # 試験的に追加してみる
 # ホームに移動するのは 'cd' だけでいいから問題はないだろうと考えてる
-builtin cd $(get_last_work_dir)
+# builtin cd $(get_last_work_dir)
+# 
