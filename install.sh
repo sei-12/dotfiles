@@ -67,7 +67,8 @@ ln -s $HOME/dotfiles/.config/skhd $HOME/
 ln -s $HOME/dotfiles/.config/yabai $HOME/
 ln -s $HOME/dotfiles/.config/sketchybar $HOME/.config/
 ln -s $HOME/dotfiles/.config/borders $HOME/.config/
-ln -s $HOME/dotfiles/.zshrc .
+ln -s $HOME/dotfiles/.zshrc $HOME/
+ln -s $HOME/dotfiles/.gitconfig $HOME/
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
