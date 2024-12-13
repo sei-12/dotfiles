@@ -3,7 +3,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/hoge/.zprofile
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> $HOME/.zprofile
 
 brew update
 
@@ -15,6 +15,7 @@ brew install rg
 brew install bat
 brew install tree
 brew install starship
+brew install duf
 
 brew install --cask font-hack-nerd-font
 brew install --cask visual-studio-code
