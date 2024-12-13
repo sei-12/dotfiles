@@ -40,6 +40,9 @@ brew install --cask alt-tab
 brew install --cask iterm2
 brew install --cask karabiner-elements
 brew install --cask discord
+brew install --cask obsidian
+brew install node
+brew install --cask deepl
 
 brew install koekeishiya/formulae/yabai
 brew install koekeishiya/formulae/skhd
