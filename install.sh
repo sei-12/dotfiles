@@ -1,5 +1,21 @@
 #!/bin/bash
 
+if [ "$(uname)" = 'Darwin' ]; then
+  OS='Mac'
+elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
+  OS='Linux'
+elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then                                                                                           
+  OS='Cygwin'
+else
+  echo "Your platform ($(uname -a)) is not supported."
+  exit 1
+fi
+
+if [ $OS != 'Mac' ]; then
+    echo "Your platform ($OS) is not supported."
+    exit 1
+fi
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -22,6 +38,8 @@ brew install --cask visual-studio-code
 brew install --cask google-chrome
 brew install --cask alt-tab
 brew install --cask iterm2
+brew install --cask karabiner-elements
+brew install --cask discord
 
 brew install koekeishiya/formulae/yabai
 brew install koekeishiya/formulae/skhd
@@ -39,9 +57,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/sei-12/dotfiles.git
 
 
+mkdir -p $HOME/.config
+
 ln -s $HOME/dotfiles/.config/nvim $HOME/.config/
-ln -s $HOME/dotfiles/.config/skhd $HOME/.config/
-ln -s $HOME/dotfiles/.config/yabai $HOME/.config/
+ln -s $HOME/dotfiles/.config/skhd $HOME/
+ln -s $HOME/dotfiles/.config/yabai $HOME/
 ln -s $HOME/dotfiles/.config/sketchybar $HOME/.config/
 ln -s $HOME/dotfiles/.config/borders $HOME/.config/
 ln -s $HOME/dotfiles/.zshrc .
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+defaults write -g ApplePressAndHoldEnabled -bool false
