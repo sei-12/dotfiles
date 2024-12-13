@@ -32,6 +32,8 @@ brew install bat
 brew install tree
 brew install starship
 brew install duf
+brew install fd
+brew install node
 
 brew install --cask font-hack-nerd-font
 brew install --cask visual-studio-code
@@ -41,7 +43,6 @@ brew install --cask iterm2
 brew install --cask karabiner-elements
 brew install --cask discord
 brew install --cask obsidian
-brew install node
 brew install --cask deepl
 
 brew install koekeishiya/formulae/yabai
@@ -59,6 +60,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/sei-12/dotfiles.git
 
+code $HOME/dotfiles/
 
 mkdir -p $HOME/.config
 
@@ -69,6 +71,8 @@ ln -s $HOME/dotfiles/.config/sketchybar $HOME/.config/
 ln -s $HOME/dotfiles/.config/borders $HOME/.config/
 ln -s $HOME/dotfiles/.zshrc $HOME/
 ln -s $HOME/dotfiles/.gitconfig $HOME/
+
+ln -s $HOME/dotfiles/.config/Code/* "$HOME/Library/Application Support/Code/User/"
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
