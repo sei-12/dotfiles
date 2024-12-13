@@ -3,6 +3,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/hoge/.zprofile
 
 brew update
 
@@ -13,7 +14,7 @@ brew install eza
 brew install rg
 brew install bat
 brew install tree
-
+brew install starship
 
 brew install --cask font-hack-nerd-font
 brew install --cask visual-studio-code
@@ -29,8 +30,7 @@ brew install sketchybar
 brew install borders
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-exec zsh
+rm $HOME/.zshrc
 
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -38,8 +38,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/sei-12/dotfiles.git
 
 
-ln -s $HOME/dotfiles/.config/nvim $HOME/config/
-ln -s $HOME/dotfiles/.config/skhd $HOME/config/
-ln -s $HOME/dotfiles/.config/yabai $HOME/config/
-ln -s $HOME/dotfiles/.config/sketchybar $HOME/config/
-ln -s $HOME/dotfiles/.config/borders $HOME/config/
+ln -s $HOME/dotfiles/.config/nvim $HOME/.config/
+ln -s $HOME/dotfiles/.config/skhd $HOME/.config/
+ln -s $HOME/dotfiles/.config/yabai $HOME/.config/
+ln -s $HOME/dotfiles/.config/sketchybar $HOME/.config/
+ln -s $HOME/dotfiles/.config/borders $HOME/.config/
+ln -s $HOME/dotfiles/.zshrc .
