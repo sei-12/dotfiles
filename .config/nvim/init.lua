@@ -5,18 +5,11 @@ vim.opt.ignorecase = true
 
 vim.cmd('syntax enable')
 
-vim.opt.langmenu = "en_US"
-vim.cmd("language en_US")
-
-
 local Plug = vim.fn['plug#']
+
 vim.call('plug#begin')
 Plug 'tpope/vim-surround'
 Plug 'folke/tokyonight.nvim'
-Plug 'tpope/vim-commentary'
-Plug 'nvim-tree/nvim-web-devicons'
-Plug 'https://github.com/vim-scripts/ScrollColors'
-
 Plug 'kana/vim-textobj-user'
 Plug 'osyo-manga/vim-textobj-multiblock'
 vim.call('plug#end')
