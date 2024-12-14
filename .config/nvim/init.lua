@@ -29,9 +29,11 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'lewis6991/gitsigns.nvim'
 vim.call('plug#end')
 
 require('lualine').setup()
+require('gitsigns').setup()
 
 require("tokyonight").setup({
     style           = "night",          -- Tokyonightのスタイル ("night", "storm", "day", など)
@@ -46,7 +48,8 @@ vim.cmd[[
 ]]
 
 vim.cmd[[
-	noremap f  <Plug>(easymotion-bd-w)
+	noremap <C-f> <Plug>(easymotion-bd-w)
+	"noremap <S-f> <Plug>(easymotion-bd-f)
 	"noremap gl <Plug>(easymotion-bd-jk)
 
     omap ab <Plug>(textobj-multiblock-a)
