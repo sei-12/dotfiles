@@ -82,6 +82,7 @@ eval "$(starship init zsh)"
 #
 alias d='cd ~/Documents'
 alias C='code .'
+alias V='nvim .'
 
 if [ $PKG_MANAGER = "brew" ]; then
 	function brew_update(){

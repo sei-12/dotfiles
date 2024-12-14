@@ -12,25 +12,19 @@ vim.opt.ignorecase     = true
 
 vim.cmd('syntax enable')
 
-if vim.g.vscode then
-  cmdheight = 0 -- this is the new line I added
-end
-
 local Plug = vim.fn['plug#']
-
 vim.call('plug#begin')
 Plug 'tpope/vim-surround'
 Plug 'folke/tokyonight.nvim'
-Plug 'kana/vim-textobj-user'
-Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'junegunn/vim-easy-align'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'cohama/lexima.vim'
 vim.call('plug#end')
+
 
 require('lualine').setup()
 require('gitsigns').setup()
@@ -48,14 +42,14 @@ vim.cmd[[
 ]]
 
 vim.cmd[[
-	noremap <C-f> <Plug>(easymotion-bd-w)
-	"noremap <S-f> <Plug>(easymotion-bd-f)
+	"noremap <C-f> <Plug>(easymotion-bd-w)
 	"noremap gl <Plug>(easymotion-bd-jk)
+	"noremap <S-f> <Plug>(easymotion-bd-f)
 
-    omap ab <Plug>(textobj-multiblock-a)
-    omap ib <Plug>(textobj-multiblock-i)
-    vmap ab <Plug>(textobj-multiblock-a)
-    vmap ib <Plug>(textobj-multiblock-i)
+    "omap ab <Plug>(textobj-multiblock-a)
+    "omap ib <Plug>(textobj-multiblock-i)
+    "vmap ab <Plug>(textobj-multiblock-a)
+    "vmap ib <Plug>(textobj-multiblock-i)
 ]]
 
 -- Plug 'junegunn/vim-easy-align'
@@ -67,37 +61,3 @@ vim.cmd[[
 vim.cmd[[
     nnoremap * *N
 ]]
-
---
---
--- 
---
--- LSP
---
---
---
---
-
-local status, nvim_lsp = pcall(require, "lspconfig")
-if (not status) then return end
-
-local protocol = require('vim.lsp.protocol')
-
-local on_attach = function(client, bufnr)
-  -- format on save
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = vim.api.nvim_create_augroup("Format", { clear = true }),
-      buffer = bufnr,
-      callback = function() vim.lsp.buf.formatting_seq_sync() end
-    })
-  end
-end
-
--- TypeScript
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" }
-}
-
