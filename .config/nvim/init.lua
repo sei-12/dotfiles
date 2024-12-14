@@ -38,14 +38,30 @@ require("lazy").setup({
     "junegunn/fzf.vim",
     "lewis6991/gitsigns.nvim",
     "cohama/lexima.vim",
+	"vim-scripts/vim-auto-save",
 })
 
+
+
 require('lualine').setup()
-require('gitsigns').setup()vim.opt.clipboard      = 'unnamedplus'
+require('gitsigns').setup()
+vim.opt.signcolumn = 'yes'
+vim.opt.clipboard      = 'unnamedplus'
+
+local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
+
+-- Split window
+keymap.set("n", "ss", ":split<Return>", opts)
+keymap.set("n", "sv", ":vsplit<Return>", opts)
+-- Move window
+keymap.set("n", "sh", "<C-w>h")
+keymap.set("n", "sk", "<C-w>k")
+keymap.set("n", "sj", "<C-w>j")
+keymap.set("n", "sl", "<C-w>l")
 
 vim.opt.relativenumber = true
 vim.opt.scrolloff      = 10
--- indent
 vim.opt.tabstop        = 4
 vim.opt.shiftwidth     = 4
 vim.opt.smartindent    = true
@@ -54,6 +70,11 @@ vim.opt.ignorecase     = true
 
 vim.cmd('syntax enable')
 vim.cmd[[colorscheme tokyonight-storm]]
+
+
+vim.cmd[[
+	let g:auto_save = 1
+]]
 
 vim.cmd[[
     nmap <C-S-o> :Files<CR>
