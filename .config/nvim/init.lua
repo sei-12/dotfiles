@@ -16,6 +16,9 @@ Plug 'folke/tokyonight.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'https://github.com/vim-scripts/ScrollColors'
+
+Plug 'kana/vim-textobj-user'
+Plug 'osyo-manga/vim-textobj-multiblock'
 vim.call('plug#end')
 
 require("tokyonight").setup({
@@ -25,8 +28,13 @@ require("tokyonight").setup({
 })
 vim.cmd[[colorscheme tokyonight-storm]]
 
--- vim.opt.termguicolors = false
+vim.cmd[[
+    omap ab <Plug>(textobj-multiblock-a)
+    omap ib <Plug>(textobj-multiblock-i)
+    vmap ab <Plug>(textobj-multiblock-a)
+    vmap ib <Plug>(textobj-multiblock-i)
+]]
 
--- 
--- vim.opt.background = dark
-
+vim.cmd[[
+    nnoremap * *N
+]]
