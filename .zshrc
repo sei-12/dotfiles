@@ -53,22 +53,22 @@ eval "$(starship init zsh)"
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
 
-# CD_HISTFILE="$HOME/.cache/cd_history_file.txt"
-# CD_HISTSIZE=100
+CD_HISTFILE="$HOME/.cache/cd_history_file.txt"
+CD_HISTSIZE=100
 
-# function chpwd_add_cd_hist(){
-# 	CUR_DIR="$(pwd)"	
-# 	cd_history_manager add --histfile $CD_HISTFILE --histsize $CD_HISTSIZE -a "$CUR_DIR/"
-# }
-# function print_cd_history(){
-# 	cd_history_manager print --histfile $CD_HISTFILE
-# }
-# function get_last_work_dir(){
-# 	cd_history_manager print --histfile $CD_HISTFILE | head -n 1
-# }
+function chpwd_add_cd_hist(){
+	CUR_DIR="$(pwd)"	
+	cd_history_manager add --histfile $CD_HISTFILE --histsize $CD_HISTSIZE -a "$CUR_DIR/"
+}
+function print_cd_history(){
+	cd_history_manager print --histfile $CD_HISTFILE
+}
+function get_last_work_dir(){
+	cd_history_manager print --histfile $CD_HISTFILE | head -n 1
+}
 
-# autoload -Uz add-zsh-hook
-# add-zsh-hook chpwd chpwd_add_cd_hist
+autoload -Uz add-zsh-hook
+add-zsh-hook chpwd chpwd_add_cd_hist
 
 
 #----------------------------------------------------------------------------------------------------#
@@ -209,8 +209,7 @@ fi
 
 if type "fd" >/dev/null 2>&1; then
 	function c() {
-		# cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf --no-sort)"
-		cd "$( {fd . ~ -t d -H} | rm_dup | fzf --no-sort)"
+		cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf --no-sort)"
 	}
 	function cr() {
 		cd "$(fd . / -t d -H | fzf --no-sort)"
@@ -322,7 +321,7 @@ export HISTORY_SUBSTRING_SEARCH_PREFIXED=not-empty
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 export FZF_DEFAULT_COMMAND="fd . . -H"
-export FZF_DEFAULT_OPTS="--reverse --height=20 -e"
+export FZF_DEFAULT_OPTS="--reverse --height=20"
 function select-history() {
 	BUFFER=$(history -n -r 1 | fzf +m --query "$LBUFFER")
 	CURSOR=${#BUFFER}
