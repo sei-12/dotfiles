@@ -7,14 +7,21 @@ config.use_ime = true
 config.hide_tab_bar_if_only_one_tab = true
 
 
-config.window_background_opacity = 0.85
-config.macos_window_background_blur = 0
+config.window_background_opacity = 0.90
+config.macos_window_background_blur = 4
 
 config.window_padding = {
   left   = 40,
   right  = 40,
   top    = 30,
   bottom = 30,
+}
+
+config.keys = {
+    {
+        key = "¥",
+        action = wezterm.action.SendKey { key = '\\' }
+    },
 }
 
 config.window_decorations = "RESIZE"
