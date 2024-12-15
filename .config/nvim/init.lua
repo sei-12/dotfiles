@@ -33,14 +33,18 @@ require("lazy").setup({
 				keys = 'flisuetovxqpdygbzhckran'
 			}
 		},
+		'nvim-telescope/telescope.nvim',
 		"junegunn/vim-easy-align",
-		-- 'junegunn/fzf.vim',
-		-- 'junegunn/fzf',
+		'junegunn/fzf.vim',
+		'junegunn/fzf',
 		"nvim-lualine/lualine.nvim",
 		"nvim-tree/nvim-web-devicons",
 		"lewis6991/gitsigns.nvim",
 		"cohama/lexima.vim",
 		"vim-scripts/vim-auto-save",
+		"L3MON4D3/LuaSnip",
+		"onsails/lspkind-nvim",
+		"glepnir/lspsaga.nvim",
 	},
 })
 
@@ -99,5 +103,70 @@ vim.api.nvim_create_user_command(
 	function() vim.cmd("write") vim.cmd("luafile" .. vim.fn.expand('$MYVIMRC')) end,
 	{desc = 'Save current file and source $MYVIMRC'}
 )
+
+local status, cmp = pcall(require, "cmp")
+if (not status) then return end
+local lspkind = require 'lspkind'
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true
+    }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+  }),
+  formatting = {
+    format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
+  }
+})
+
+vim.cmd [[
+  set completeopt=menuone,noinsert,noselect
+  highlight! default link CmpItemKind CmpItemMenuDefault
+]]
+
+
+require('lazy').setup({
+    'nvimdev/lspsaga.nvim',
+    config = function()
+        require('lspsaga').setup({})
+    end,
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter', -- optional
+        'nvim-tree/nvim-web-devicons',     -- optional
+    }
+})
+
+
+local status, saga = pcall(require, "lspsaga")
+if (not status) then return end
+
+saga.init_lsp_saga {
+  server_filetype_map = {
+    typescript = 'typescript'
+  }
+}
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
+vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
+
 
 
