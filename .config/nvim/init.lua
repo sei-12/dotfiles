@@ -67,7 +67,6 @@ vim.opt.clipboard  = 'unnamedplus'
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Split window
 keymap.set("n","w","<C-w>")
 keymap.set("n","wf",":Windows<CR>")
 
