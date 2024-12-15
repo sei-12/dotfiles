@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
-		
+
 		{
 			"folke/tokyonight.nvim",
 			lazy = false,
@@ -25,6 +25,7 @@ require("lazy").setup({
 			},
 		},
 		{{ import = "plugins" }},
+
 		"tpope/vim-surround",
 		{
 			'smoka7/hop.nvim',
@@ -33,7 +34,7 @@ require("lazy").setup({
 				keys = 'flisuetovxqpdygbzhckran'
 			}
 		},
-		'nvim-telescope/telescope.nvim',
+		-- 'nvim-telescope/telescope.nvim',
 		"junegunn/vim-easy-align",
 		'junegunn/fzf.vim',
 		'junegunn/fzf',
@@ -41,16 +42,28 @@ require("lazy").setup({
 		"nvim-tree/nvim-web-devicons",
 		"lewis6991/gitsigns.nvim",
 		"cohama/lexima.vim",
-		"vim-scripts/vim-auto-save",
+		-- "vim-scripts/vim-auto-save",
 		"L3MON4D3/LuaSnip",
 		"onsails/lspkind-nvim",
-		"glepnir/lspsaga.nvim",
+		{
+			'nvimdev/lspsaga.nvim',
+			config = function()
+				require('lspsaga').setup({
+					border_style = "single"
+				})
+			end,
+			dependencies = {
+				'nvim-treesitter/nvim-treesitter', -- optional
+				'nvim-tree/nvim-web-devicons',     -- optional
+			}
+		}
 	},
 })
 
 
 require('lualine').setup()
 require('gitsigns').setup()
+
 vim.opt.signcolumn = 'yes'
 vim.opt.clipboard  = 'unnamedplus'
 
@@ -81,61 +94,26 @@ vim.opt.ignorecase     = true
 
 vim.cmd[[colorscheme tokyonight-storm]]
 vim.cmd[[
-	highlight VertSplit ctermbg=NONE
-	highlight VertSplit ctermfg=NONE
+highlight VertSplit ctermbg=NONE
+highlight VertSplit ctermfg=NONE
 ]]
 vim.cmd('syntax enable')
 
 
-vim.cmd[[
-	let g:auto_save = 1
-]]
+-- vim.cmd[[
+-- let g:auto_save = 1
+-- ]]
 
 vim.cmd[[
-	xmap ga <Plug>(EasyAlign)
-	nmap ga <Plug>(EasyAlign)
-	nnoremap * *N
-	nnoremap <C-f> :HopWord<CR>
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+nnoremap * *N
+nnoremap <C-f> :HopWord<CR>
 ]]
 
-vim.api.nvim_create_user_command(
-	'ReloadVim',
-	function() vim.cmd("write") vim.cmd("luafile" .. vim.fn.expand('$MYVIMRC')) end,
-	{desc = 'Save current file and source $MYVIMRC'}
+vim.api.nvim_create_user_command('ReloadVim',
+function() vim.cmd("write") vim.cmd("luafile" .. vim.fn.expand('$MYVIMRC')) end,
+{desc = 'Save current file and source $MYVIMRC'}
 )
-
-local status, cmp = pcall(require, "cmp")
-if (not status) then return end
-local lspkind = require 'lspkind'
-
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true
-    }),
-  }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
-  }),
-  formatting = {
-    format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
-  }
-})
-
-vim.cmd [[
-  set completeopt=menuone,noinsert,noselect
-  highlight! default link CmpItemKind CmpItemMenuDefault
-]]
 
 

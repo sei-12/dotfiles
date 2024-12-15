@@ -346,5 +346,5 @@ export PATH="$PATH:/Users/sei-12/.local/bin"
 
 # 試験的に追加してみる
 # ホームに移動するのは 'cd' だけでいいから問題はないだろうと考えてる
-# builtin cd $(get_last_work_dir)
+builtin cd $(get_last_work_dir)
 # 
