@@ -111,6 +111,13 @@ alias re='exec zsh'
 alias gcb='git checkout -b'
 alias rm_dup="awk '!seen[\$0]++'"
 
+function editclip(){
+	TMP_FILE=$HOME/.cache/__edit_clip.tmp
+	pbpaste > $TMP_FILE
+	nvim $TMP_FILE
+	cat $TMP_FILE | pbcopy
+}
+
 if [ $OS = "Mac" ]; then
 	# finderを開く
 	alias F="open ."
