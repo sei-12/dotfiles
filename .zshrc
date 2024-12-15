@@ -81,7 +81,7 @@ add-zsh-hook chpwd chpwd_add_cd_hist
 # 結構使ってる
 #
 alias d='cd ~/Documents'
-alias C='code .'
+alias C='nvim .'
 # alias V='nvim .'
 
 if [ $PKG_MANAGER = "brew" ]; then
@@ -210,6 +210,7 @@ fi
 if type "fd" >/dev/null 2>&1; then
 	function c() {
 		cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf --no-sort)"
+		# cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf )"
 	}
 	function cr() {
 		cd "$(fd . / -t d -H | fzf --no-sort)"
@@ -321,7 +322,7 @@ export HISTORY_SUBSTRING_SEARCH_PREFIXED=not-empty
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 export FZF_DEFAULT_COMMAND="fd . . -H"
-export FZF_DEFAULT_OPTS="--reverse --height=20"
+export FZF_DEFAULT_OPTS="--reverse --height=20 -e"
 function select-history() {
 	BUFFER=$(history -n -r 1 | fzf +m --query "$LBUFFER")
 	CURSOR=${#BUFFER}

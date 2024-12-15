@@ -13,13 +13,15 @@ alt - g    : yabai -m window --grid 8:8:2:0:4:8
 alt - j    : yabai -m window --grid 8:8:0:0:6:8
 alt - k    : yabai -m window --grid 8:8:6:0:2:8
 
-alt - n    : yabai -m window --grid 8:8:6:4:2:4
-alt - p    : yabai -m window --grid 8:8:6:0:2:4
+alt - n: open -g "rectangle://execute-action?name=top-left-sixth"
 
-alt + shift - j       : yabai -m window --grid 8:8:0:0:4:4
-alt + shift - k       : yabai -m window --grid 8:8:4:0:4:4
-alt + shift - m       : yabai -m window --grid 8:8:0:4:4:4
-alt + shift - 0x2B    : yabai -m window --grid 8:8:4:4:4:4
+# alt - n    : yabai -m window --grid 8:8:6:4:2:4
+# alt - p    : yabai -m window --grid 8:8:6:0:2:4
+
+# alt + shift - j: yabai -m window --move rel:8:8:1:1
+# alt + shift - k: yabai -m window --grid 8:8:4:0:4:4
+# alt + shift - h: yabai -m window --grid 8:8:0:4:4:4
+# alt + shift - l: yabai -m window --grid 8:8:4:4:4:4
 
 
 # alt - k    : yabai -m window --grid 10:10:7:0:3:10
