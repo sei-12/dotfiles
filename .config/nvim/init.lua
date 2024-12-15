@@ -36,8 +36,6 @@ require("lazy").setup({
 		},
 		-- 'nvim-telescope/telescope.nvim',
 		"junegunn/vim-easy-align",
-		'junegunn/fzf.vim',
-		'junegunn/fzf',
 		"nvim-lualine/lualine.nvim",
 		"nvim-tree/nvim-web-devicons",
 		"lewis6991/gitsigns.nvim",
@@ -71,8 +69,11 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Split window
+keymap.set("n","w","<C-w>")
+keymap.set("n","wf",":Windows<CR>")
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
+
 -- Move window
 keymap.set("n", "sh", "<C-w>h")
 keymap.set("n", "sk", "<C-w>k")
@@ -81,6 +82,7 @@ keymap.set("n", "sl", "<C-w>l")
 
 -- go
 keymap.set("n", "<C-S-o>", ":Files<CR>")
+keymap.set("n", "gl", ":HopLine<CR>")
 keymap.set("n", "<C-f>", ":HopWord<CR>")
 
 vim.opt.relativenumber = true

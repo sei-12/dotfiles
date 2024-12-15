@@ -328,7 +328,7 @@ export HISTORY_SUBSTRING_SEARCH_PREFIXED=not-empty
 
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-export FZF_DEFAULT_COMMAND="fd . . -H"
+export FZF_DEFAULT_COMMAND="fd . . -H -E \"*.git/*\""
 export FZF_DEFAULT_OPTS="--reverse --height=20 -e"
 function select-history() {
 	BUFFER=$(history -n -r 1 | fzf +m --query "$LBUFFER")
