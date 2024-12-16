@@ -71,7 +71,10 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 keymap.set("n","w","<C-w>")
-keymap.set("n","wf",":Windows<CR>")
+-- keymap.set("n","w<CR>")
+
+-- keymap.set("n","wf",":Windows<CR>")
+
 
 
 -- go

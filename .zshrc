@@ -82,6 +82,7 @@ add-zsh-hook chpwd chpwd_add_cd_hist
 #
 alias d='cd ~/Documents'
 alias C='nvim .'
+alias dot='cd ~/dotfiles/ && nvim .'
 # alias V='nvim .'
 
 if [ $PKG_MANAGER = "brew" ]; then
