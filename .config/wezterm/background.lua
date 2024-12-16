@@ -5,7 +5,7 @@ local BG_IMGS_DIR = HOME..'/dotfiles/.config/wezterm/wallpapers/dist/'
 
 function scandir(directory)
     local i, t, popen = 0, {}, io.popen
-    local pfile = popen('ls -a "'..directory..'"')
+    local pfile = popen('ls "'..directory..'"')
     for filename in pfile:lines() do
         i = i + 1
         t[i] = directory..filename
