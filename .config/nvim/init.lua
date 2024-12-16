@@ -53,13 +53,16 @@ require("lazy").setup({
 				'nvim-treesitter/nvim-treesitter', -- optional
 				'nvim-tree/nvim-web-devicons',     -- optional
 			}
-		}
+		},
 	},
 })
 
 
 require('lualine').setup()
 require('gitsigns').setup()
+
+vim.opt.termguicolors = true
+
 
 vim.opt.signcolumn = 'yes'
 vim.opt.clipboard  = 'unnamedplus'
@@ -92,10 +95,6 @@ highlight VertSplit ctermfg=NONE
 ]]
 vim.cmd('syntax enable')
 
-
--- vim.cmd[[
--- let g:auto_save = 1
--- ]]
 
 vim.cmd[[
 xmap ga <Plug>(EasyAlign)
