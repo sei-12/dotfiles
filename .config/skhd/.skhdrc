@@ -39,7 +39,7 @@ alt - t : yabai -m window --grid 8:8:2:1:4:4
 # alt - return : osascript ~/dotfiles/scripts/iterm/open_new_window.scpt && yabai -m window --grid 8:8:2:1:4:4
 
 # sleepが入っている。いい方法が見つからなかた
-alt - return : osascript ~/dotfiles/scripts/wezterm/open_new_window.scpt && sleep 0.1 && yabai -m window --grid 8:8:2:1:4:4
+alt - return : osascript ~/dotfiles/scripts/wezterm/open_new_window.scpt && sleep 0.5 && yabai -m window --grid 8:8:2:1:4:4
 
 
 # browser

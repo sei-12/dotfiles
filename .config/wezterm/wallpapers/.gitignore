@@ -1,0 +1,5 @@
+/dist/*
+/downloads/*
+/venv/*
+!/dist/.gitkeep
+!/downloads/.gitkeep

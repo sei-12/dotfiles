@@ -11,17 +11,20 @@ config.window_background_opacity = 0.90
 config.macos_window_background_blur = 3
 
 config.window_padding = {
-  left   = 40,
-  right  = 40,
-  top    = 30,
-  bottom = 30,
+	left   = 40,
+	right  = 40,
+	top    = 30,
+	bottom = 30,
 }
 
+
+config.background = require "background"
+
 config.keys = {
-    {
-        key = "¥",
-        action = wezterm.action.SendKey { key = '\\' }
-    },
+	{
+		key = "¥",
+		action = wezterm.action.SendKey { key = '\\' }
+	},
 }
 
 config.window_decorations = "RESIZE"
