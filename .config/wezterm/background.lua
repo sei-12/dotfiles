@@ -15,12 +15,12 @@ function scandir(directory)
 end
 
 
-local background_images = scandir(BG_IMGS_DIR)
 
 
 wezterm.on('window-config-reloaded', function(window, pane)
 	if not window:get_config_overrides() then
 		math.randomseed(os.time())
+		local background_images = scandir(BG_IMGS_DIR)
 		local random_background = background_images[math.random(#background_images)]
 		window:set_config_overrides {
 			background = {

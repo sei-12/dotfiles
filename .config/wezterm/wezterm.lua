@@ -10,12 +10,16 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.90
 config.macos_window_background_blur = 3
 
+config.initial_rows = 36
+config.initial_cols = 133
+
 config.window_padding = {
 	left   = 40,
 	right  = 40,
 	top    = 30,
 	bottom = 30,
 }
+
 
 
 config.background = require "background"
