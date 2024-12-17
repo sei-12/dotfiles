@@ -85,6 +85,9 @@ alias C='nvim .'
 alias dot='cd ~/dotfiles/ && nvim .'
 # alias V='nvim .'
 
+
+
+
 if [ $PKG_MANAGER = "brew" ]; then
 	function brew_update(){
 		echo "\"update_pkgs\" に変更しました"
@@ -301,6 +304,15 @@ zshaddhistory() {
     local line="${1%%$'\n'}"
 }
 
+
+#----------------------------------------------------------------------------------------------------#
+#                                                                                                    #
+#                                             SUB_MODULES                                            #
+#                                                                                                    #
+#----------------------------------------------------------------------------------------------------#
+
+source $HOME/dotfiles/zsh_files/wezterm_zshrc.zsh
+
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
 #                                               OTHERS                                               #
@@ -356,4 +368,4 @@ export PATH="$PATH:/Users/sei-12/.local/bin"
 # 試験的に追加してみる
 # ホームに移動するのは 'cd' だけでいいから問題はないだろうと考えてる
 builtin cd $(get_last_work_dir)
-# 
+

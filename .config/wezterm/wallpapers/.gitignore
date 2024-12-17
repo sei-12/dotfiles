@@ -1,5 +1,7 @@
 /dist/*
 /downloads/*
 /venv/*
+/ssh_imgs/*
+!/ssh_imgs/.gitkeep
 !/dist/.gitkeep
 !/downloads/.gitkeep

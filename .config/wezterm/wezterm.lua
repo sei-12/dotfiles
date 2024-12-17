@@ -8,7 +8,7 @@ config.hide_tab_bar_if_only_one_tab = true
 
 
 config.window_background_opacity = 0.90
-config.macos_window_background_blur = 3
+config.macos_window_background_blur = 2
 
 config.initial_rows = 36
 config.initial_cols = 133
@@ -33,5 +33,6 @@ config.keys = {
 
 config.window_decorations = "RESIZE"
 config.color_scheme = 'Tokyo Night Storm'
+
 
 return config
