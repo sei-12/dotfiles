@@ -4,6 +4,9 @@
     //
     "vim.useSystemClipboard": true,
     "vim.visualstar": true, //カーソル上にあるワードを"*"で検索
+    "vim.useCtrlKeys": true,
+    "vim.sneak": true,
+    "vim.easymotion": true,
     "editor.smoothScrolling": true,
     "explorer.compactFolders": false,
     "extensions.ignoreRecommendations": true,

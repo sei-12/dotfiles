@@ -34,7 +34,8 @@ local function make_background_config(background_image)
 		{
 			source = {
 				Gradient = {
-					colors = { "#292e42", "#1f2335" },
+					-- colors = { "#292e42", "#1f2335" },
+					colors = { "#202334", "#202334" },
 					orientation = {
 						Linear = { angle = -30.0 },
 					},
@@ -52,7 +53,7 @@ local function make_background_config(background_image)
 			repeat_y = "NoRepeat",
 			width = '400px',
 			height = '400px',
-			opacity = 0.5,
+			opacity = 0.7,
 			horizontal_align = 'Right',
 			vertical_align = 'Bottom',
 		}

@@ -15,10 +15,30 @@
         "key": "ctrl+shift+b",
         "command": "workbench.action.toggleSidebarVisibility"
     },
+
+    //
+    //
+    // NEOVIM
+    //
+    //
     {
-        "key": "ctrl+shift+o",
+        "key": "Enter",
+        "when": "neovim.mode == normal && editorFocus",
         "command": "workbench.action.quickOpen"
     },
+    {
+        "key": "ctrl+Enter",
+        "when": "neovim.mode == normal && editorTextFocus",
+        "command": "workbench.action.moveEditorToRightGroup"
+    },
+    {
+        "key": "shift+k",
+        "when": "neovim.mode == normal && editorTextFocus",
+        "command": "workbench.action.showHover"
+    },
+    
+
+    
     {
         "key": "ctrl+shift+d",
         "command": "editor.action.addSelectionToNextFindMatch",

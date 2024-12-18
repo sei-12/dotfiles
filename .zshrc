@@ -81,7 +81,7 @@ add-zsh-hook chpwd chpwd_add_cd_hist
 # 結構使ってる
 #
 alias d='cd ~/Documents'
-alias C='nvim .'
+alias C='code .'
 alias dot='cd ~/dotfiles/ && nvim .'
 # alias V='nvim .'
 
