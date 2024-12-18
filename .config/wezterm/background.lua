@@ -4,9 +4,14 @@ local HOME = os.getenv("HOME")
 local BG_IMGS_DIR = HOME..'/dotfiles/.config/wezterm/wallpapers/dist/'
 local SSH_IMGS_DIR = HOME..'/dotfiles/.config/wezterm/wallpapers/ssh_imgs/'
 
-function scandir(directory)
+local function scandir(directory)
 	local i, t, popen = 0, {}, io.popen
 	local pfile = popen('ls "'..directory..'"')
+
+	if pfile == nil then
+		return {}
+	end
+
 	for filename in pfile:lines() do
 		i = i + 1
 		t[i] = filename
@@ -15,7 +20,7 @@ function scandir(directory)
 	return t
 end
 
-function get_random_bg(imgs_dir)
+local function get_random_bg(imgs_dir)
 	math.randomseed(os.time())
 	local background_images = scandir(imgs_dir)
 	local random_background = imgs_dir..background_images[math.random(#background_images)]
@@ -24,7 +29,7 @@ end
 
 local BG_IMG = get_random_bg(BG_IMGS_DIR)
 
-function make_background_config(background_image)
+local function make_background_config(background_image)
 	return {
 		{
 			source = {
@@ -45,8 +50,6 @@ function make_background_config(background_image)
 			},
 			repeat_x = 'NoRepeat',
 			repeat_y = "NoRepeat",
-			horizontal_align = 'Right',
-			vertical_align = 'Bottom',
 			width = '400px',
 			height = '400px',
 			opacity = 0.5,
@@ -57,17 +60,16 @@ function make_background_config(background_image)
 end
 
 
-function reload_bg(window,pane)
+local function reload_bg(window)
 		local overrides = window:get_config_overrides() or {}
 		math.randomseed(os.time())
 		local background_image = get_random_bg(BG_IMGS_DIR)
 		wezterm.log_info("in reload_bg",background_image)
 		overrides.background = make_background_config(background_image)
 		window:set_config_overrides(overrides)
-		return
 end
 
-wezterm.on('user-var-changed', function(window, pane, name, value)
+wezterm.on('user-var-changed', function(window, _, name, value)
 	wezterm.log_info("user-var-changed!!")
 
 	if not (name == "custom_background_events") then
@@ -83,13 +85,13 @@ wezterm.on('user-var-changed', function(window, pane, name, value)
 	end
 
 	if value == "ssh_end" then
-		reload_bg(window,pane)
+		reload_bg(window)
 		return
 	end
 
 
 	if value == "initialize" then
-		reload_bg(window,pane)
+		reload_bg(window)
 		return
 	end
 end)
