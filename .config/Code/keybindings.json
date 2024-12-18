@@ -22,8 +22,8 @@
     //
     //
     {
-        "key": "Enter",
-        "when": "neovim.mode == normal && editorFocus",
+        "key": "shift+Enter",
+        "when": "neovim.mode == normal",
         "command": "workbench.action.quickOpen"
     },
     {
@@ -34,7 +34,7 @@
     {
         "key": "shift+k",
         "when": "neovim.mode == normal && editorTextFocus",
-        "command": "workbench.action.showHover"
+        "command": "editor.action.showHover"
     },
     
 
