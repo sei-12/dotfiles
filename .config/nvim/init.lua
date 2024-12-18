@@ -98,7 +98,8 @@ keymap.set("o","am","<Plug>(textobj-multiblock-a)")
 keymap.set("o","im","<Plug>(textobj-multiblock-i)")
 keymap.set("x","am","<Plug>(textobj-multiblock-a)")
 keymap.set("x","im","<Plug>(textobj-multiblock-i)")
-keymap.set("n", "<C-CR>", ":bnext<CR>:vs<CR>:bnext<CR>")
+
+keymap.set("n", "<C-CR>", ":vs<CR>")
 keymap.set("n", "<C-S-o>", ":Files<CR>")
 keymap.set("n", "s", ":HopWord<CR>")
 keymap.set("i","<C-j>","<ESC>")
@@ -113,6 +114,10 @@ keymap.set("n","*","*N")
 
 
 vim.opt.termguicolors  = true
+vim.opt.wrap         = false
+-- vim.opt.textwidth = 0
+-- vim.opt.wrapmargin = 0
+
 vim.opt.signcolumn     = 'yes'
 vim.opt.clipboard      = 'unnamedplus'
 vim.opt.relativenumber = true

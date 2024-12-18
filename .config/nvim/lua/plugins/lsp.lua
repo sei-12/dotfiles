@@ -55,6 +55,8 @@ return {
 		}
 			vim.keymap.set("n", "<F2>", "<cmd>Lspsaga rename<CR>")
 			vim.keymap.set("n", "K",  "<cmd>Lspsaga hover_doc<CR>")
+			vim.keymap.set("n", "gd",  "<cmd>Lspsaga goto_definition<CR>")
+			-- vim.keymap.set("n", "gd",  "<cmd>Lspsaga goto_defnition<CR>")
 	end
 
 }

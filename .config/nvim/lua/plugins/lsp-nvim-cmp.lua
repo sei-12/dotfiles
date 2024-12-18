@@ -12,7 +12,7 @@ return {
 	 config = function ()
 	   local cmp = require("cmp")
 	   local types = require('cmp.types')
-	  vim.opt.completeopt = { "menu", "menuone", "noselect" }
+		vim.opt.completeopt = { "menu" }
 	   cmp.setup({
 
 	     snippet = {
