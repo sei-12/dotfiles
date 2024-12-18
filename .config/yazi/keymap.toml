@@ -1,0 +1,8 @@
+# keymap.toml
+
+[[manager.prepend_keymap]]
+on = "<ESC>"
+run = 'quit'
+desc = "Just for test!"
+
+

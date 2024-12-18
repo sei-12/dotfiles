@@ -70,17 +70,31 @@ vim.opt.clipboard  = 'unnamedplus'
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+
+
+-- 使わないキー
+-- w (used)
+-- s (used)
+-- m
+-- e
+-- z
+-- b
+
+-- レギュラーメンバー
 keymap.set("n","w","<C-w>")
--- keymap.set("n","w<CR>")
 
--- keymap.set("n","wf",":Windows<CR>")
-
-
-
--- go
+-- 試験的
 keymap.set("n", "<C-S-o>", ":Files<CR>")
-keymap.set("n", "gl", ":HopLine<CR>")
+keymap.set("n", "s", ":HopWord<CR>")
+keymap.set("i","<C-j>","<ESC>")
+
+
+-- 疑問視
 keymap.set("n", "<C-f>", ":HopWord<CR>")
+keymap.set("n", "gl", ":HopLine<CR>")
+
+
+
 
 vim.opt.relativenumber = true
 vim.opt.number         = true
