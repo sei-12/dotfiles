@@ -33,13 +33,11 @@ require("lazy").setup({
 				keys = 'flisuetovxqpdygbzhckran'
 			}
 		},
-		-- 'nvim-telescope/telescope.nvim',
 		"junegunn/vim-easy-align",
 		"nvim-lualine/lualine.nvim",
 		"nvim-tree/nvim-web-devicons",
 		"lewis6991/gitsigns.nvim",
 		"cohama/lexima.vim",
-		-- "vim-scripts/vim-auto-save",
 		"L3MON4D3/LuaSnip",
 		"onsails/lspkind-nvim",
 		{
@@ -54,12 +52,13 @@ require("lazy").setup({
 				'nvim-tree/nvim-web-devicons',     -- optional
 			}
 		},
+		"tpope/vim-repeat",
 	},
 })
 
 
-require('lualine').setup()
-require('gitsigns').setup()
+require('lualine').setup {}
+require('gitsigns').setup {}
 
 vim.opt.termguicolors = true
 
@@ -68,7 +67,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.clipboard  = 'unnamedplus'
 
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
+-- local opts = { noremap = true, silent = true }
 
 
 
