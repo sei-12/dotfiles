@@ -40,6 +40,12 @@
 
     
     {
+        "key": "ctrl+e",
+        "when": "neovim.mode == insert",
+        "command": "editor.action.inlineSuggest.commit"
+    },
+    
+    {
         "key": "ctrl+shift+d",
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "editorFocus"

@@ -7,6 +7,7 @@
     "vim.useCtrlKeys": true,
     "vim.sneak": true,
     "vim.easymotion": true,
+
     "editor.smoothScrolling": true,
     "explorer.compactFolders": false,
     "extensions.ignoreRecommendations": true,
