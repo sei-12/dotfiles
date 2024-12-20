@@ -82,11 +82,10 @@ add-zsh-hook chpwd chpwd_add_cd_hist
 #
 alias d='cd ~/Documents'
 alias C='code .'
-alias dot='cd ~/dotfiles/ && nvim .'
-# alias V='nvim .'
-
-
-
+alias dot='cd ~/dotfiles/ && code .'
+alias rm_dup="awk '!seen[\$0]++'"
+alias re='exec zsh'
+alias gcb='git checkout -b'
 
 if [ $PKG_MANAGER = "brew" ]; then
 	function brew_update(){
@@ -99,21 +98,18 @@ fi
 
 ## ちょっとしたメモとかをいますぐ適当な場所に保存したい！って時に使う
 alias paste_to_cache='echo -n "File Name:"; read ptc_file_name; mkdir -p ~/.cache/ptc_memo; pbpaste > ~/.cache/ptc_memo/$ptc_file_name'
-alias dot='cd ~/dotfiles && code ~/dotfiles'
 
 #
 # 追加したはいいけど使ってない
 #
-alias lg='\ls -a -1 | \rg'
-alias sc-sh='maim ~/Pictures/screen-shot/$(date "+%Y-%m-%d_%H-%M-%S").png'
 alias cp_history="history 0 | awk '{\$1=\"\";print substr(\$0,2)}' | fzf |pbcopy"
 
-#
-# 追加してみる
-#
-alias re='exec zsh'
-alias gcb='git checkout -b'
-alias rm_dup="awk '!seen[\$0]++'"
+# 一旦 ff 使わなかったら findf
+function ff(){
+	fd . ~ -t f -H | 
+	fzf --height=70 --preview 'bat --color=always --style=numbers --line-range :500 {}' |
+	xargs nvim -R
+}
 
 function editclip(){
 	TMP_FILE=$HOME/.cache/__edit_clip.tmp
@@ -254,6 +250,7 @@ function cd() {
 	builtin cd $@ && l
 }
 
+
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
 #                                              KEYBIND                                               #
@@ -342,7 +339,7 @@ export HISTORY_SUBSTRING_SEARCH_PREFIXED=not-empty
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 export FZF_DEFAULT_COMMAND="fd . . -H -E \"*.git/*\""
-export FZF_DEFAULT_OPTS="--reverse --height=20 -e"
+export FZF_DEFAULT_OPTS="--reverse --height=20"
 function select-history() {
 	BUFFER=$(history -n -r 1 | fzf +m --query "$LBUFFER")
 	CURSOR=${#BUFFER}

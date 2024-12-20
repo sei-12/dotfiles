@@ -18,3 +18,5 @@ require("lazy").setup({
 
 local keymap = vim.keymap
 keymap.set("n", "s", ":HopWord<CR>")
+keymap.set("n","m","%")
+keymap.set("v","m","%")
