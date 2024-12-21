@@ -15,7 +15,8 @@ alt - g    : yabai -m window --grid 8:8:2:0:4:8
 alt - j    : yabai -m window --grid 6:6:0:0:2:6
 alt - k    : yabai -m window --grid 6:6:2:0:4:6
 
-alt - n: open -g "rectangle://execute-action?name=top-left-sixth"
+alt - n: ~/.local/bin/yabai-rectangle-grid --grid 2x3
+alt - b: ~/.local/bin/yabai-rectangle-grid --grid 2x2
 
 # alt - n    : yabai -m window --grid 8:8:6:4:2:4
 # alt - p    : yabai -m window --grid 8:8:6:0:2:4
