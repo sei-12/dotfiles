@@ -10,36 +10,19 @@ alt - l    : yabai -m window --grid 8:8:4:0:4:8
 alt - f    : yabai -m window --grid 1:1:0:0:1:1
 alt - g    : yabai -m window --grid 8:8:2:0:4:8
 
-# alt - j    : yabai -m window --grid 8:8:0:0:3:8
-# alt - k    : yabai -m window --grid 8:8:3:0:5:8
-alt - j    : yabai -m window --grid 6:6:0:0:2:6
-alt - k    : yabai -m window --grid 6:6:2:0:4:6
-
-alt - n: ~/.local/bin/yabai-rectangle-grid --grid 2x3
-alt - b: ~/.local/bin/yabai-rectangle-grid --grid 2x2
-
-# alt - n    : yabai -m window --grid 8:8:6:4:2:4
-# alt - p    : yabai -m window --grid 8:8:6:0:2:4
-
-# alt + shift - j: yabai -m window --move rel:8:8:1:1
-# alt + shift - k: yabai -m window --grid 8:8:4:0:4:4
-# alt + shift - h: yabai -m window --grid 8:8:0:4:4:4
-# alt + shift - l: yabai -m window --grid 8:8:4:4:4:4
-
-
-# alt - k    : yabai -m window --grid 10:10:7:0:3:10
-# alt - j    : yabai -m window --grid 10:10:0:0:7:10
+alt - n : ~/.local/bin/yabai-rectangle-grid --grid 2x4
+alt - k : yabai -m window --grid 8:8:2:0:6:8
+alt - b : ~/.local/bin/yabai-rectangle-grid --grid 2x2
+alt - j : ~/.local/bin/yabai-rectangle-grid --grid 1x4
 
 alt - o : open -a 'Obsidian'
-alt - m : open -a "Music"
+alt + shift - m : open -a "Music"
 alt + shift - n : open -a "Mission Control"
 alt - s : open -a "Safari"
 alt - d : open -a "DeepL"
 
 # term
 alt - t : yabai -m window --grid 8:8:2:1:4:4
-
-# alt - return : osascript ~/dotfiles/scripts/iterm/open_new_window.scpt && yabai -m window --grid 8:8:2:1:4:4
 
 # sleepが入っている。いい方法が見つからなかた
 alt - return : osascript ~/dotfiles/scripts/wezterm/open_new_window.scpt && sleep 0.5 && yabai -m window --grid 8:8:2:1:4:4
