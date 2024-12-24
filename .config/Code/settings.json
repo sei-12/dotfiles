@@ -13,7 +13,8 @@
     "extensions.ignoreRecommendations": true,
     "editor.fontFamily": "Hack Nerd Font Bold",
     "workbench.startupEditor": "none",
-    "git.openRepositoryInParentFolders": "never",
+    // .git/ が開いているフォルダより上にあるときでもvscodeがリポジトリを認識してくれる
+    "git.openRepositoryInParentFolders": "always",
     "editor.fontWeight": "600",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": true,
