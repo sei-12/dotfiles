@@ -2,7 +2,7 @@
 [
     //
     // VSCODE
-    // 
+    //
     {
         "key": "cmd+n",
         "command": "explorer.newFile"
@@ -32,19 +32,22 @@
         "command": "workbench.action.moveEditorToRightGroup"
     },
     {
+        "key": "shift+=",
+        "when": "neovim.mode == normal && editorTextFocus",
+        "command": "editor.action.formatDocument"
+    },
+    {
         "key": "shift+k",
         "when": "neovim.mode == normal && editorTextFocus",
         "command": "editor.action.showHover"
     },
-    
 
-    
     {
         "key": "ctrl+e",
         "when": "neovim.mode == insert",
         "command": "editor.action.inlineSuggest.commit"
     },
-    
+
     {
         "key": "ctrl+shift+d",
         "command": "editor.action.addSelectionToNextFindMatch",
@@ -157,7 +160,6 @@
         "key": "ctrl+tab",
         "command": "workbench.action.nextEditorInGroup"
     },
-    
 
     {
         "key": "cmd+k cmd+right",

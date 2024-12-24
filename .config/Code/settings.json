@@ -53,5 +53,10 @@
         }
     ],
     "window.zoomLevel": 0,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.tabWidth": 4,
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    }
 }
