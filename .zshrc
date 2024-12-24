@@ -169,9 +169,6 @@ else
 		alias cat='batcat --paging=never'
 		alias less='batcat'
 	else
-		# TODO
-		# ifが複雑になった
-		# 書き方がわからん
 		echo "\"batcat\" is not installed"
 	fi
 fi
@@ -371,3 +368,9 @@ EDITOR="nvim"
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^k' edit-command-line
+
+
+# named color values: red,green,blue,yellow,cyan,magenta,white,black
+ZSH_HIGHLIGHT_STYLES[path]=fg=blue
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
