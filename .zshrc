@@ -216,8 +216,7 @@ fi
 
 if type "fd" >/dev/null 2>&1; then
 	function c() {
-		cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf --no-sort)"
-		# cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf )"
+		cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf)"
 	}
 	function cr() {
 		cd "$(fd . / -t d -H | fzf --no-sort)"
@@ -366,3 +365,9 @@ export PATH="$PATH:/Users/sei-12/.local/bin"
 # ホームに移動するのは 'cd' だけでいいから問題はないだろうと考えてる
 builtin cd $(get_last_work_dir)
 
+
+# コマンドをVimで編集
+EDITOR="nvim"
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^k' edit-command-line
