@@ -1,13 +1,4 @@
 {
-    //
-    // VIM
-    //
-    "vim.useSystemClipboard": true,
-    "vim.visualstar": true, //カーソル上にあるワードを"*"で検索
-    "vim.useCtrlKeys": true,
-    "vim.sneak": true,
-    "vim.easymotion": true,
-
     "editor.smoothScrolling": true,
     "explorer.compactFolders": false,
     "extensions.ignoreRecommendations": true,
@@ -29,10 +20,7 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "window.menuBarVisibility": "toggle",
     "editor.renderControlCharacters": true,
-    "errorLens.enabledDiagnosticLevels": [
-        "error",
-        "warning"
-    ],
+    "errorLens.enabledDiagnosticLevels": ["error", "warning"],
     "vim.surround": true,
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -47,10 +35,7 @@
     "multiCommand.commands": [
         {
             "command": "my.fold.level1",
-            "sequence": [
-                "cursorBottom",
-                "editor.foldLevel1"
-            ]
+            "sequence": ["cursorBottom", "editor.foldLevel1"]
         }
     ],
     "window.zoomLevel": 0,
