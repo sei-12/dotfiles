@@ -14,9 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.opt.clipboard      = 'unnamedplus'
 
-vim.keymap.set("n","*","*N")
-vim.keymap.set("n","m","%")
-vim.keymap.set("v","m","%")
 
 if vim.g.vscode == nil then
     require "normal"

@@ -86,6 +86,7 @@ local keymap = vim.keymap
 keymap.set("n","w","<C-w>")
 keymap.set("n","ga","<Plug>(EasyAlign)")
 keymap.set("x","ga","<Plug>(EasyAlign)")
+keymap.set("n","*","*N")
 
 -- 試験的
 keymap.set("n","m","%")
@@ -102,12 +103,6 @@ keymap.set("n", "<C-CR>", ":vs<CR>")
 keymap.set("n", "<C-S-o>", ":Files<CR>")
 keymap.set("n", "s", ":HopWord<CR>")
 keymap.set("i","<C-j>","<ESC>")
-keymap.set("n","*","*N")
-
-
--- 疑問視
--- keymap.set("n", "<C-f>", ":HopWord<CR>")
--- keymap.set("n", "gl", ":HopLine<CR>")
 
 
 

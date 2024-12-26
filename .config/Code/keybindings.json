@@ -36,20 +36,6 @@
         "when": "neovim.mode == normal && editorTextFocus",
         "command": "editor.action.formatDocument"
     },
-    {
-        "key": "shift+k",
-        "when": "neovim.mode == normal && editorTextFocus",
-        "command": "editor.action.showHover"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.showCommands"
-    },
-    {
-        "key": "ctrl+e",
-        "when": "neovim.mode == insert",
-        "command": "editor.action.inlineSuggest.commit"
-    },
 
     // FormatはVimの仕事
     // >
