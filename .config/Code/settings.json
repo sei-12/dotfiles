@@ -1,4 +1,7 @@
 {
+    "scrolloff.alwaysCenter": false,
+    "scrolloff.scrolloff": 0,
+
     "editor.smoothScrolling": true,
     "explorer.compactFolders": false,
     "extensions.ignoreRecommendations": true,
@@ -44,5 +47,6 @@
     "prettier.tabWidth": 4,
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
-    }
+    },
+    "editor.stickyScroll.enabled": false
 }

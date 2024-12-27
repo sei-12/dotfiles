@@ -19,8 +19,19 @@ require("lazy").setup({
 local vscode = require('vscode')
 local keymap = vim.keymap
 
+-- 記録終了時にもq+charとなってしまう
+keymap.set("n","q","ql")
+keymap.set("n","@","@l")
 keymap.set("n", "s", ":HopWord<CR>")
 keymap.set("n","*","*N")
+
+keymap.set("n","H","^")
+keymap.set("n","L","$")
+keymap.set("v","H","^")
+keymap.set("v","L","$")
+
+keymap.set("n","m","%")
+keymap.set("v","m","%")
 
 keymap.set("n", ":",function()
 	vscode.call("workbench.action.showCommands")

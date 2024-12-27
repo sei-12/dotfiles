@@ -74,11 +74,19 @@ keymap.set("n","w","<C-w>")
 keymap.set("n","ga","<Plug>(EasyAlign)")
 keymap.set("x","ga","<Plug>(EasyAlign)")
 keymap.set("n","*","*N")
+keymap.set("v","*","*N")
 
 -- 試験的
 keymap.set("n","m","%")
 keymap.set("v","m","%")
 keymap.set("n", "<Enter>", ":Files<CR>")
+keymap.set("n","q","ql")
+keymap.set("n","@","@l")
+
+keymap.set("n","H","^")
+keymap.set("n","L","$")
+keymap.set("v","H","^")
+keymap.set("v","L","$")
 
 -- multiblock の m　
 keymap.set("o","am","<Plug>(textobj-multiblock-a)")
