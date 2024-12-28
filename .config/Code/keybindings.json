@@ -7,10 +7,6 @@
         "key": "cmd+n",
         "command": "explorer.newFile"
     },
-    // {
-    //     "key": "ctrl+shift+m",
-    //     "command": "workbench.action.focusActiveEditorGroup"
-    // },
     {
         "key": "ctrl+shift+b",
         "command": "workbench.action.toggleSidebarVisibility"
