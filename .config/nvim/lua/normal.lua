@@ -46,6 +46,12 @@ require("lazy").setup({
 				"kana/vim-textobj-user"
 			}
 		},
+		{
+			"rbtnn/vim-textobj-string",
+			dependencies = {
+				"kana/vim-textobj-user"
+			}
+		},
 	},
 })
 

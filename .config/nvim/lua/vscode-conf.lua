@@ -5,7 +5,13 @@ vim.cmd[[
 require("lazy").setup({
     spec = {
 		"tpope/vim-surround",
-		-- "kana/vim-textobj-user",
+		"kana/vim-textobj-user",
+		{
+			"rbtnn/vim-textobj-string",
+			dependencies = {
+				"kana/vim-textobj-user"
+			}
+		},
 		{
 			'smoka7/hop.nvim',
 			version = "*",
