@@ -41,12 +41,6 @@ require("lazy").setup({
 		"tpope/vim-repeat",
 		"kana/vim-textobj-user",
 		{
-			"osyo-manga/vim-textobj-multiblock",
-			dependencies = {
-				"kana/vim-textobj-user"
-			}
-		},
-		{
 			"rbtnn/vim-textobj-string",
 			dependencies = {
 				"kana/vim-textobj-user"
@@ -94,11 +88,6 @@ keymap.set("n","L","$")
 keymap.set("v","H","^")
 keymap.set("v","L","$")
 
--- multiblock の m　
-keymap.set("o","am","<Plug>(textobj-multiblock-a)")
-keymap.set("o","im","<Plug>(textobj-multiblock-i)")
-keymap.set("x","am","<Plug>(textobj-multiblock-a)")
-keymap.set("x","im","<Plug>(textobj-multiblock-i)")
 
 keymap.set("n", "<C-CR>", ":vs<CR>")
 keymap.set("n", "<C-S-o>", ":Files<CR>")
