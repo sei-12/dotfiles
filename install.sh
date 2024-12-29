@@ -94,7 +94,6 @@ code --install-extension github.copilot
 code --install-extension github.copilot-chat
 code --install-extension magdalenalipka.tokyo-night-frameless
 code --install-extension mhutchie.git-graph
-code --install-extension ms-ceintl.vscode-language-pack-ja
 code --install-extension ms-python.debugpy
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
