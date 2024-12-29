@@ -11,17 +11,16 @@
         "key": "ctrl+shift+b",
         "command": "workbench.action.toggleSidebarVisibility"
     },
+    {
+        "key": "cmd+p",
+        "command": "workbench.action.showCommands"
+    },
 
     //
     //
     // NEOVIM
     //
     //
-    {
-        "key": "shift+Enter",
-        "when": "neovim.mode == normal",
-        "command": "workbench.action.quickOpen"
-    },
     {
         "key": "ctrl+Enter",
         "when": "neovim.mode == normal && editorTextFocus",
