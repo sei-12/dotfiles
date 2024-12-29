@@ -51,3 +51,11 @@ else
         vscode.call("workbench.action.closeEditorsAndGroup")
     end)
 end
+
+if vim.g.vscode == nil then
+else
+    local vscode = require('vscode')
+    keymap.set("n","=",function()
+        vscode.call("editor.action.formatDocument")
+    end)
+end

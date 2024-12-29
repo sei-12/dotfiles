@@ -1,8 +1,5 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    //
-    // VSCODE
-    //
     {
         "key": "cmd+n",
         "command": "explorer.newFile"
@@ -15,61 +12,14 @@
         "key": "cmd+p",
         "command": "workbench.action.showCommands"
     },
-
-    //
-    //
-    // NEOVIM
-    //
-    //
     {
         "key": "ctrl+Enter",
         "when": "neovim.mode == normal && editorTextFocus",
         "command": "workbench.action.moveEditorToRightGroup"
     },
     {
-        "key": "shift+=",
-        "when": "neovim.mode == normal && editorTextFocus",
-        "command": "editor.action.formatDocument"
-    },
-
-    // FormatはVimの仕事
-    // >
-    {
-        "key": "ctrl+shift+i",
-        "command": "-notebook.formatCell",
-        "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
-    },
-    {
-        "key": "ctrl+shift+i",
-        "command": "-editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-    },
-    {
-        "key": "ctrl+shift+i",
-        "command": "-editor.action.formatDocument.none",
-        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+i",
-        "command": "-notebook.format",
-        "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
-    },
-    // <
-    // FormatはVimの仕事
-    // いらない
-    {
-        "key": "ctrl+shift+i",
-        "command": "-workbench.action.toggleDevTools",
-        "when": "isDevelopment"
-    },
-    {
         "key": "ctrl+tab",
         "command": "workbench.action.focusNextGroup",
-        "when": "!editorTextFocus && !filesExplorerFocus && !inSearchEditor && !replaceInputBoxFocus && !searchViewletFocus && !terminalFocus && neovim.mode != 'cmdline'"
-    },
-    {
-        "key": "ctrl+w ctrl+w",
-        "command": "-workbench.action.focusNextGroup",
         "when": "!editorTextFocus && !filesExplorerFocus && !inSearchEditor && !replaceInputBoxFocus && !searchViewletFocus && !terminalFocus && neovim.mode != 'cmdline'"
     },
     {
@@ -81,88 +31,5 @@
         "key": "ctrl+tab",
         "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
         "when": "!activeEditorGroupEmpty"
-    },
-    {
-        "key": "cmd+k cmd+left",
-        "command": "-workbench.action.focusLeftGroup"
-    },
-
-    // workbench.action.focus Group
-    // ctrl (+shift) + arrow
-    {
-        "key": "ctrl+h",
-        "command": "workbench.action.focusLeftGroup"
-    },
-    {
-        "key": "ctrl+l",
-        "command": "workbench.action.focusRightGroup"
-    },
-    {
-        "key": "ctrl+shift+tab",
-        "command": "workbench.action.previousEditorInGroup"
-    },
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.nextEditorInGroup"
-    },
-
-    {
-        "key": "cmd+k cmd+right",
-        "command": "-workbench.action.focusRightGroup"
-    },
-    {
-        "key": "shift+cmd+n",
-        "command": "-workbench.action.newWindow"
-    },
-    {
-        "key": "cmd+k cmd+0",
-        "command": "-editor.foldAll",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
-        "key": "cmd+f",
-        "command": "-actions.find",
-        "when": "editorFocus || editorIsOpen"
-    },
-    {
-        "key": "cmd+f",
-        "command": "editor.foldLevel1",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
-        "key": "cmd+k cmd+1",
-        "command": "-editor.foldLevel1",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
-        "key": "cmd+k alt+cmd+left",
-        "command": "-workbench.action.previousEditorInGroup"
-    },
-    {
-        "key": "cmd+k alt+cmd+right",
-        "command": "-workbench.action.nextEditorInGroup"
-    },
-    {
-        "key": "ctrl+shift+n",
-        "command": "workbench.action.moveEditorToRightGroup"
-    },
-    {
-        "key": "cmd+k cmd+l",
-        "command": "-editor.toggleFold",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
-        "key": "cmd+k cmd+j",
-        "command": "-editor.unfoldAll",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
-        "key": "cmd+k cmd+m",
-        "command": "-workbench.action.toggleMaximizeEditorGroup",
-        "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "workbench.action.toggleMaximizeEditorGroup"
     }
 ]
