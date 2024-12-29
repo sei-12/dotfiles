@@ -1,7 +1,7 @@
 -- vscodeとnvimでできるだけ差がないようにする
 
 -- 使わないキー
--- w 
+-- w (used)
 -- s (used)
 -- m (used)
 -- z
@@ -16,8 +16,6 @@ keymap.set("n","*","*N")
 keymap.set("v","*","*N")
 keymap.set("n","b","%")
 keymap.set("v","b","%")
-
--- 試験的
 keymap.set("n","H","^")
 keymap.set("n","L","$")
 keymap.set("v","H","^")
@@ -45,17 +43,38 @@ else
 end
 
 if vim.g.vscode == nil then
+    keymap.set("n","w","<C-w>")
 else
     local vscode = require('vscode')
-    keymap.set("n","<C-w>c",function()
+
+    keymap.set("n","wc",function()
         vscode.call("workbench.action.closeEditorsAndGroup")
     end)
+    keymap.set("n","wl",function()
+        vscode.call("workbench.action.focusRightGroup")
+    end)
+    keymap.set("n","wh",function()
+        vscode.call("workbench.action.focusLeftGroup")
+    end)
+    keymap.set("n","wn",function()
+        vscode.call("workbench.action.moveEditorToRightGroup")
+    end)
+    keymap.set("n","wo",function()
+        vscode.call("workbench.action.closeEditorsInOtherGroups")
+    end)
+
+    -- 閉じるのは別のコマンドで行う. 
+    -- Explorerにフォーカスがある時のキーバインドをどうやって編集するのかわからない
+    keymap.set("n","we",function()
+        vscode.call("workbench.files.action.focusFilesExplorer")
+    end)
 end
+
 
 if vim.g.vscode == nil then
 else
     local vscode = require('vscode')
-    keymap.set("n","=",function()
+    keymap.set("n","==",function()
         vscode.call("editor.action.formatDocument")
     end)
 end

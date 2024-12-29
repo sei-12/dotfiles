@@ -42,7 +42,6 @@
         }
     ],
     "window.zoomLevel": 0,
-    "workbench.sideBar.location": "right",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.tabWidth": 4,
     "[rust]": {

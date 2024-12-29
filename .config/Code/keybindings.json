@@ -13,9 +13,9 @@
         "command": "workbench.action.showCommands"
     },
     {
-        "key": "ctrl+Enter",
-        "when": "neovim.mode == normal && editorTextFocus",
-        "command": "workbench.action.moveEditorToRightGroup"
+        "key": "Escape",
+        "when": "sideBarVisible",
+        "command": "workbench.action.toggleSidebarVisibility"
     },
     {
         "key": "ctrl+tab",
@@ -31,5 +31,9 @@
         "key": "ctrl+tab",
         "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
         "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "cmd+k cmd+e",
+        "command": "workbench.files.action.focusFilesExplorer"
     }
 ]
