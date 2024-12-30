@@ -43,6 +43,7 @@ else
 end
 
 if vim.g.vscode == nil then
+    -- なんでかわからないけどvscodeだとうまく動作しない
     keymap.set("n","w","<C-w>")
 else
     local vscode = require('vscode')
