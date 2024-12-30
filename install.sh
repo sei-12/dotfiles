@@ -23,28 +23,29 @@ echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> $HOME/.zprofile
 
 brew update
 
-brew install git
-brew install fzf
-brew install nvim
-brew install eza
-brew install rg
 brew install bat
-brew install tree
-brew install starship
 brew install duf
+brew install eza
 brew install fd
+brew install fzf
+brew install git
 brew install node
+brew install nvim
+brew install rg
+brew install starship
+brew install tree
 
-brew install --cask font-hack-nerd-font
-brew install --cask visual-studio-code
-brew install --cask google-chrome
 brew install --cask alt-tab
-brew install --cask iterm2
-brew install --cask karabiner-elements
-brew install --cask discord
-brew install --cask obsidian
 brew install --cask deepl
+brew install --cask discord
+brew install --cask font-hack-nerd-font
+brew install --cask google-chrome
+brew install --cask karabiner-elements
+brew install --cask obsidian
+brew install --cask visual-studio-code
+brew install --cask wezterm
 
+brew tap koekeishiya/formulae
 brew install koekeishiya/formulae/yabai
 brew install koekeishiya/formulae/skhd
 
@@ -62,6 +63,8 @@ git clone https://github.com/sei-12/dotfiles.git
 
 code $HOME/dotfiles/
 
+sleep 5
+
 mkdir -p $HOME/.config
 
 ln -s $HOME/dotfiles/.config/nvim $HOME/.config/
@@ -71,6 +74,7 @@ ln -s $HOME/dotfiles/.config/sketchybar $HOME/.config/
 ln -s $HOME/dotfiles/.config/yazi $HOME/.config/
 ln -s $HOME/dotfiles/.config/wezterm $HOME/.config/
 ln -s $HOME/dotfiles/.config/borders $HOME/.config/
+ln -s $HOME/dotfiles/.config/karabiner $HOME/.config/
 ln -s $HOME/dotfiles/.zshrc $HOME/
 ln -s $HOME/dotfiles/.gitconfig $HOME/
 

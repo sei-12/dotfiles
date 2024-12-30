@@ -269,6 +269,7 @@ _path=(
 	$HOME/.local/bin
 	$HOME/.local/kitty.app/bin
 	$HOME/Documents/MyVault/tools
+	$HOME/.ghcup/bin
 )
 
 for dir in $_path; do
@@ -374,3 +375,4 @@ bindkey '^k' edit-command-line
 ZSH_HIGHLIGHT_STYLES[path]=fg=blue
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
+

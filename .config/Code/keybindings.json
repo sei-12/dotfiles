@@ -13,9 +13,14 @@
         "command": "workbench.action.showCommands"
     },
     {
-        "key": "Escape",
+        "key": "ctrl+Enter",
         "when": "sideBarVisible",
         "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "Escape",
+        "when": "sideBarFocus",
+        "command": "workbench.action.focusActiveEditorGroup"
     },
     {
         "key": "ctrl+tab",
