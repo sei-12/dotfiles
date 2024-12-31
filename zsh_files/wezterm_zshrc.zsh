@@ -1,6 +1,6 @@
 
 if [ $TERM_PROGRAM != "WezTerm" ]; then
-	exit
+	return
 fi
 
 
