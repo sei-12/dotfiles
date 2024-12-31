@@ -40,5 +40,10 @@
     {
         "key": "cmd+k cmd+e",
         "command": "workbench.files.action.focusFilesExplorer"
+    },
+    {
+        "key": "ctrl+e",
+        "when": "neovim.mode == insert",
+        "command": "editor.action.inlineSuggest.commit"
     }
 ]
