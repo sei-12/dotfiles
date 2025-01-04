@@ -81,3 +81,12 @@ else
         vscode.call("editor.action.formatDocument")
     end)
 end
+
+
+if vim.g.vscode == nil then
+else
+    local vscode = require('vscode')
+    keymap.set("n","gl",function()
+        vscode.call("editor.action.openLink")
+    end)
+end
