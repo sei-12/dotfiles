@@ -234,8 +234,8 @@ if type "kitty" >/dev/null 2>&1; then
 fi
 
 function gen_password(){
-	LENGTH=${1:-16}
-	cat /dev/urandom | fold -w 256 | head -n 1 | shasum -a 256 | fold -w $LENGTH | head -n 1
+	LENGTH=${1:-20}
+	echo "$(date '+%Y/%m/%d %H:%M:%S')$RANDOM$RANDOM" | shasum -a 256 | fold -w $LENGTH | head -n 1
 }
 
 function uuid(){
