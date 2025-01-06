@@ -235,7 +235,7 @@ fi
 
 function gen_password(){
 	LENGTH=${1:-20}
-	echo "$(date '+%Y/%m/%d %H:%M:%S')$RANDOM$RANDOM" | shasum -a 256 | fold -w $LENGTH | head -n 1
+	uuidgen | shasum -a 512 | fold -w $LENGTH | head -n 1
 }
 
 function uuid(){
