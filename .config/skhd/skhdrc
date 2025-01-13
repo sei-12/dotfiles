@@ -19,7 +19,8 @@ alt - o : open -a 'Obsidian' ~/diary
 alt + shift - m : open -a "Music"
 alt + shift - n : open -a "Mission Control"
 alt - s : open -a "Safari"
-alt - d : open -a "DeepL"
+# alt - d : open -a "DeepL"
+alt - d : open https://translate.google.co.jp/
 
 # term
 alt - t : yabai -m window --grid 8:8:2:1:4:4
