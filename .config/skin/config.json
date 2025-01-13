@@ -1,6 +1,14 @@
 {
-	"how_to_open_url": {
-		"https":{"cmd":"/home/sei12/.config/skin/open-url.sh","args":[]},
-		"http":{"cmd":"/home/sei12/.config/skin/open-url.sh","args":[]}
+	"colorTheme": {
+		"addButton": {
+			"borderColor": "#292e42",
+			"bgColor": "#1f2335",
+			"color": "#7aa2f7"
+		}
+	},
+	"keybinds": {
+		"global": {
+    		"toggleWindowVisible": "alt+z"
+		}
 	}
 }
