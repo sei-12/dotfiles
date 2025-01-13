@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+local tab = require("tab")
+
 config.font = wezterm.font('Hack Nerd Font', { weight = 'Bold', italic = false })
 config.font_size = 15
 config.use_ime = true
@@ -34,5 +36,6 @@ config.keys = {
 config.window_decorations = "RESIZE"
 config.color_scheme = 'Tokyo Night Storm'
 
+tab.setup(config)
 
 return config
