@@ -5,7 +5,6 @@ local config = {}
 config.font = wezterm.font('Hack Nerd Font', { weight = 'Bold', italic = false })
 config.font_size = 15
 config.use_ime = true
-config.hide_tab_bar_if_only_one_tab = true
 
 
 config.window_background_opacity = 0.90
@@ -21,20 +20,30 @@ config.window_padding = {
 	bottom = 20,
 }
 
-
+local act = wezterm.action
 
 config.background = require "background"
+
 
 config.keys = {
 	{
 		key = "¥",
 		action = wezterm.action.SendKey { key = '\\' }
 	},
+	{ 
+		key = "q", 
+		mods = "CTRL",
+		action = act.ActivateCopyMode 
+	},
 }
 
 config.window_decorations = "RESIZE"
 config.color_scheme = 'Tokyo Night Storm'
-
+config.colors = {
+	tab_bar = {
+		background = 'rgba(0,0,0,0)'
+    }
+}
 
 tab.setup(config)
 
