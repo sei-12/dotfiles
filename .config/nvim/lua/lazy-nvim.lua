@@ -1,4 +1,7 @@
 local spec = {
+    -- https://github.com/michaeljsmith/vim-indent-object
+    "michaeljsmith/vim-indent-object",
+
     "tpope/vim-surround",
 	"tpope/vim-repeat",
     "kana/vim-textobj-user",
@@ -27,7 +30,7 @@ if vim.g.vscode == nil then
             transparent = true,
         },
     }
-    
+
     spec[#spec + 1] = {{ import = "plugins" }}
 
     spec[#spec + 1] = "junegunn/vim-easy-align"
