@@ -2,6 +2,7 @@ local wezterm = require 'wezterm'
 
 local HOME = os.getenv("HOME")
 local BG_IMGS_DIR = HOME..'/dotfiles/.config/wezterm/wallpapers/dist/'
+local SSH_IMGS_DIR = HOME..'/dotfiles/.config/wezterm/wallpapers/ssh_imgs/'
 
 local function scandir(directory)
 	local i, t, popen = 0, {}, io.popen
@@ -75,6 +76,20 @@ wezterm.on('user-var-changed', function(window, _, name, value)
 	if not (name == "custom_background_events") then
 		return
 	end
+
+	if value == "ssh_start" then
+		local overrides = window:get_config_overrides() or {}
+		local ssh_img = get_random_bg(SSH_IMGS_DIR)
+		overrides.background = make_background_config(ssh_img)
+		window:set_config_overrides(overrides)
+		return
+	end
+
+	if value == "ssh_end" then
+		reload_bg(window)
+		return
+	end
+
 
 	if value == "initialize" then
 		reload_bg(window)
