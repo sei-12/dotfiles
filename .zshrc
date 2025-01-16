@@ -217,7 +217,7 @@ fi
 
 if type "fd" >/dev/null 2>&1; then
 	function c() {
-		cd "$( {print_cd_history; fd . ~ -t d -H} | rm_dup | fzf)"
+		cd "$( fd . ~ -t d -H | fzf)"
 	}
 	function cr() {
 		cd "$(fd . / -t d -H | fzf --no-sort)"
