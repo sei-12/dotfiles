@@ -25,6 +25,7 @@ fi
 
 
 
+EDITOR="nvim"
 
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
@@ -99,12 +100,7 @@ fi
 ## ちょっとしたメモとかをいますぐ適当な場所に保存したい！って時に使う
 alias paste_to_cache='echo -n "File Name:"; read ptc_file_name; mkdir -p ~/.cache/ptc_memo; pbpaste > ~/.cache/ptc_memo/$ptc_file_name'
 
-#
-# 追加したはいいけど使ってない
-#
 alias cp_history="history 0 | awk '{\$1=\"\";print substr(\$0,2)}' | fzf |pbcopy"
-
-# 一旦 ff 使わなかったら findf
 function ff(){
 	fd . ~ -t f -H | 
 	fzf --height=70 --preview 'bat --color=always --style=numbers --line-range :500 {}' |
@@ -261,6 +257,13 @@ bindkey '^f' forward-word
 bindkey '^p' history-substring-search-up
 bindkey '^n' history-substring-search-down
 
+#---------- edit command line ----------#  
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^k' edit-command-line
+
+bindkey '^r' select-history
+
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
 #                                                PATH                                                #
@@ -302,6 +305,13 @@ zshaddhistory() {
     local line="${1%%$'\n'}"
 }
 
+function select-history() {
+	BUFFER=$(history -n -r 1 | fzf +m --query "$LBUFFER")
+	CURSOR=${#BUFFER}
+	zle clear-screen
+}
+zle -N select-history
+
 
 #----------------------------------------------------------------------------------------------------#
 #                                                                                                    #
@@ -324,7 +334,7 @@ zle -N edit-command-line
 setopt no_beep
 
 # kitty with ssh issue https://www.reddit.com/r/linux4noobs/comments/tkvs8o/kitty_terminal_with_ssh_issues/
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 function scroll-and-clear-screen() {
 	printf '\n%.0s' {1..$LINES}
@@ -341,42 +351,11 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 export FZF_DEFAULT_COMMAND="fd . . -H -E \"*.git/*\""
 export FZF_DEFAULT_OPTS="--reverse --height=20"
-function select-history() {
-	BUFFER=$(history -n -r 1 | fzf +m --query "$LBUFFER")
-	CURSOR=${#BUFFER}
-	zle clear-screen
-}
-zle -N select-history
-bindkey '^r' select-history
-
-#
-# Node Version Manager
-#
-function load-nvm(){
-	# 起動時間が0.4sくらいかかるから、必要なときだけ読み込む
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-}
-
-# Created by `pipx` on 2024-09-01 09:14:26
-export PATH="$PATH:/Users/sei-12/.local/bin"
-
-
-# 試験的に追加してみる
-# ホームに移動するのは 'cd' だけでいいから問題はないだろうと考えてる
-builtin cd $(get_last_work_dir)
-
-
-# コマンドをVimで編集
-EDITOR="nvim"
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey '^k' edit-command-line
-
 
 # named color values: red,green,blue,yellow,cyan,magenta,white,black
 ZSH_HIGHLIGHT_STYLES[path]=fg=blue
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
 
+
+builtin cd $(get_last_work_dir)
