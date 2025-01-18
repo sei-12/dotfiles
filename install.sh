@@ -92,7 +92,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 code --install-extension asvetliakov.vscode-neovim
 code --install-extension cpmcgrath.codealignment-vscode
 code --install-extension dbaeumer.vscode-eslint
-code --install-extension enhancedjax.vscode-ayu-zed
+code --install-extension dustypomerleau.rust-syntax
 code --install-extension esbenp.prettier-vscode
 code --install-extension github.copilot
 code --install-extension github.copilot-chat
@@ -101,10 +101,8 @@ code --install-extension mhutchie.git-graph
 code --install-extension ms-python.debugpy
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
+code --install-extension ms-vscode-remote.remote-containers
 code --install-extension rust-lang.rust-analyzer
-code --install-extension serayuzgur.crates
-code --install-extension swellaby.rust-pack
-code --install-extension tamasfe.even-better-toml
 code --install-extension usernamehw.errorlens
 
 
