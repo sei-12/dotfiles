@@ -16,6 +16,7 @@ if [ $OS != 'Mac' ]; then
     exit 1
 fi
 
+# install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -58,6 +59,7 @@ brew tap FelixKratz/formulae
 brew install sketchybar
 brew install borders
 
+# install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 rm $HOME/.zshrc
 
@@ -85,11 +87,11 @@ ln -s $HOME/dotfiles/.gitconfig $HOME/
 
 ln -s $HOME/dotfiles/.config/Code/* "$HOME/Library/Application Support/Code/User/"
 
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# 何か忘れた
+# sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+#        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-defaults write -g ApplePressAndHoldEnabled -bool false
-
+$HOME/dotfiles/scripts/write-defaults.sh
 
 # VSCode Extensions
 # ❯ code --list-extensions | xargs -L 1 echo code --install-extension | pbcopy

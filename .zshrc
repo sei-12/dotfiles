@@ -88,6 +88,7 @@ alias rm_dup="awk '!seen[\$0]++'"
 alias re='exec zsh'
 alias gcb='git checkout -b'
 alias t='touch'
+alias lg="ls | grep"
 
 if [ $PKG_MANAGER = "brew" ]; then
 	function brew_update(){
