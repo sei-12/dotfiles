@@ -155,9 +155,9 @@ fi
 #
 # grep => rg
 if type "rg" >/dev/null 2>&1; then
-	alias grep='rg'
+	alias grep='rg -i'
 else
-	alias grep='grep --color=auto'
+	alias grep='grep -i --color=auto'
 	echo "\"rg\" is not installed"
 fi
 
