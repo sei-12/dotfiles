@@ -54,22 +54,22 @@ eval "$(starship init zsh)"
 #                                                                                                    #
 #----------------------------------------------------------------------------------------------------#
 
-CD_HISTFILE="$HOME/.cache/cd_history_file.txt"
-CD_HISTSIZE=100
+# CD_HISTFILE="$HOME/.cache/cd_history_file.txt"
+# CD_HISTSIZE=100
 
-function chpwd_add_cd_hist(){
-	CUR_DIR="$(pwd)"	
-	cd_history_manager add --histfile $CD_HISTFILE --histsize $CD_HISTSIZE -a "$CUR_DIR/"
-}
-function print_cd_history(){
-	cd_history_manager print --histfile $CD_HISTFILE
-}
-function get_last_work_dir(){
-	cd_history_manager print --histfile $CD_HISTFILE | head -n 1
-}
+# function chpwd_add_cd_hist(){
+# 	CUR_DIR="$(pwd)"	
+# 	cd_history_manager add --histfile $CD_HISTFILE --histsize $CD_HISTSIZE -a "$CUR_DIR/"
+# }
+# function print_cd_history(){
+# 	cd_history_manager print --histfile $CD_HISTFILE
+# }
+# function get_last_work_dir(){
+# 	cd_history_manager print --histfile $CD_HISTFILE | head -n 1
+# }
 
-autoload -Uz add-zsh-hook
-add-zsh-hook chpwd chpwd_add_cd_hist
+# autoload -Uz add-zsh-hook
+# add-zsh-hook chpwd chpwd_add_cd_hist
 
 
 #----------------------------------------------------------------------------------------------------#
@@ -87,6 +87,7 @@ alias dot='cd ~/dotfiles/ && code .'
 alias rm_dup="awk '!seen[\$0]++'"
 alias re='exec zsh'
 alias gcb='git checkout -b'
+alias t='touch'
 
 if [ $PKG_MANAGER = "brew" ]; then
 	function brew_update(){
@@ -112,6 +113,12 @@ function editclip(){
 	pbpaste > $TMP_FILE
 	nvim $TMP_FILE
 	cat $TMP_FILE | pbcopy
+}
+
+function go_tmpdir(){
+	RAND_DIR=$(uuidgen)	
+	mkdir -p $HOME/Documents/tmp/$RAND_DIR
+	cd $HOME/Documents/tmp/$RAND_DIR
 }
 
 if [ $OS = "Mac" ]; then
@@ -358,4 +365,4 @@ ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
 
 
-builtin cd $(get_last_work_dir)
+# builtin cd $(get_last_work_dir)

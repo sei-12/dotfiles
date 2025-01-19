@@ -34,6 +34,8 @@ brew install nvim
 brew install rg
 brew install starship
 brew install tree
+brew install yt-dlp
+brew install ffmpeg
 
 brew install --cask alt-tab
 brew install --cask deepl
@@ -48,6 +50,9 @@ brew install --cask wezterm
 brew tap koekeishiya/formulae
 brew install koekeishiya/formulae/yabai
 brew install koekeishiya/formulae/skhd
+
+brew tap sei-12/formulae
+brew install --cask skin
 
 brew tap FelixKratz/formulae
 brew install sketchybar
@@ -68,8 +73,8 @@ sleep 5
 mkdir -p $HOME/.config
 
 ln -s $HOME/dotfiles/.config/nvim $HOME/.config/
-ln -s $HOME/dotfiles/.config/skhd $HOME/
-ln -s $HOME/dotfiles/.config/yabai $HOME/
+ln -s $HOME/dotfiles/.config/skhd/skhdrc $HOME/.skhdrc
+ln -s $HOME/dotfiles/.config/yabai/yabairc $HOME/.yabairc
 ln -s $HOME/dotfiles/.config/sketchybar $HOME/.config/
 ln -s $HOME/dotfiles/.config/yazi $HOME/.config/
 ln -s $HOME/dotfiles/.config/wezterm $HOME/.config/
