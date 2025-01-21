@@ -11,9 +11,9 @@ alt - f    : yabai -m window --grid 1:1:0:0:1:1
 alt - g    : yabai -m window --grid 8:8:2:0:4:8
 
 alt - n : ~/.local/bin/yabai-rectangle-grid --grid 2x4
-alt - k : yabai -m window --grid 8:8:2:0:6:8
 alt - b : ~/.local/bin/yabai-rectangle-grid --grid 2x2
-alt - j : ~/.local/bin/yabai-rectangle-grid --grid 1x4
+alt + shift - j : ~/.local/bin/yabai-rectangle-grid --grid 1x4
+alt + shift - k : yabai -m window --grid 8:8:2:0:6:8
 
 alt - o : open -a 'Obsidian' ~/diary && sleep 0.5 && yabai -m window --grid 12:12:3:1:6:8
 
