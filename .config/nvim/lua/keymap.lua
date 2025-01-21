@@ -20,6 +20,7 @@ keymap.set("n","H","^")
 keymap.set("n","L","$")
 keymap.set("v","H","^")
 keymap.set("v","L","$")
+keymap.set("n","gy","ggyG")
 
 
 if vim.g.vscode == nil then
