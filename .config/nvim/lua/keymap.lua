@@ -1,4 +1,4 @@
--- vscodeとnvimでできるだけ差がないようにする
+
 
 -- 使わないキー
 -- w (used)
@@ -22,6 +22,13 @@ keymap.set("v","H","^")
 keymap.set("v","L","$")
 keymap.set("n","gy","ggyG")
 
+
+-- hover window
+if vim.g.vscode == nil then
+    -- keymap.set("n", "m", ":Files<CR>")
+else
+    -- vscode neovimの標準の機能で shift + k : showHoverが実装されている
+end
 
 if vim.g.vscode == nil then
     keymap.set("n", "m", ":Files<CR>")
@@ -65,6 +72,14 @@ else
     end)
     keymap.set("n","wo",function()
         vscode.call("workbench.action.closeEditorsInOtherGroups")
+    end)
+    
+    -- workbench.action.moveActiveEditorGroupRight
+    keymap.set("n","wL",function()
+        vscode.call("workbench.action.moveActiveEditorGroupRight")
+    end)
+    keymap.set("n","wH",function()
+        vscode.call("workbench.action.moveActiveEditorGroupLeft")
     end)
 
     -- 閉じるのは別のコマンドで行う. 

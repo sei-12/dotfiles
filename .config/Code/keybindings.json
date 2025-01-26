@@ -45,5 +45,14 @@
         "key": "ctrl+e",
         "when": "neovim.mode == insert",
         "command": "editor.action.inlineSuggest.commit"
+    },
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.reloadWindow"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
     }
 ]
