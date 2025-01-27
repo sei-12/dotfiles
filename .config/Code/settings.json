@@ -47,6 +47,8 @@
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
     },
+    "rust-analyzer.checkOnSave": true,
+    "rust-analyzer.check.command": "clippy",
     "editor.stickyScroll.enabled": false,
     "typescript.tsserver.experimental.enableProjectDiagnostics": true,
     "haskell.manageHLS": "GHCup",
