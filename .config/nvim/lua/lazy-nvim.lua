@@ -1,5 +1,6 @@
 local spec = {
     -- https://github.com/michaeljsmith/vim-indent-object
+    'terryma/vim-expand-region',
     "michaeljsmith/vim-indent-object",
 
     "tpope/vim-surround",

@@ -8,3 +8,4 @@ end
 
 require "lazy-nvim"
 require "keymap"
+require "expand_region"
