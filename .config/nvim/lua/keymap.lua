@@ -65,11 +65,22 @@ else
     end)
     keymap.set("n","wh",function()
         vscode.call("workbench.action.focusLeftGroup")
-        -- vscode.call("workbench.action.focusPreviousPart")
     end)
+
+    keymap.set("n","wk",function()
+        vscode.call("workbench.action.focusAboveGroup")
+    end)
+    keymap.set("n","wj",function()
+        vscode.call("workbench.action.focusBelowGroup")
+    end)
+
     keymap.set("n","wn",function()
         vscode.call("workbench.action.moveEditorToRightGroup")
     end)
+    keymap.set("n","ws",function()
+        vscode.call("workbench.action.splitEditorDown")
+    end)
+    
     keymap.set("n","wo",function()
         vscode.call("workbench.action.closeEditorsInOtherGroups")
     end)
