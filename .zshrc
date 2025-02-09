@@ -285,6 +285,7 @@ _path=(
 	$HOME/.local/kitty.app/bin
 	$HOME/Documents/MyVault/tools
 	$HOME/.ghcup/bin
+	$HOME/.nimble/bin
 )
 
 for dir in $_path; do
