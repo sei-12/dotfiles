@@ -52,5 +52,6 @@
     "editor.stickyScroll.enabled": false,
     "typescript.tsserver.experimental.enableProjectDiagnostics": true,
     "haskell.manageHLS": "GHCup",
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "editor.wordWrap": "on"
 }
