@@ -53,5 +53,9 @@
     "typescript.tsserver.experimental.enableProjectDiagnostics": true,
     "haskell.manageHLS": "GHCup",
     "workbench.sideBar.location": "right",
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "zig.zls.enabled": "on",
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
+    }
 }
