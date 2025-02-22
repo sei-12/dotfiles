@@ -1,7 +1,7 @@
 {
 	"colorTheme": {
 		"addButton": {
-			"borderColor": "#292e42",
+			"borderColor": "red",
 			"bgColor": "#1f2335",
 			"color": "#7aa2f7"
 		}
@@ -9,6 +9,7 @@
 	"keybinds": {
 		"global": {
     		"toggleWindowVisible": "alt+z"
-		}
+		},
+		"focusDownBookmarkList": "ctrl+m"
 	}
 }
