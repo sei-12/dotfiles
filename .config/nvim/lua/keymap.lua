@@ -21,7 +21,6 @@ keymap.set("n","L","$")
 keymap.set("v","H","^")
 keymap.set("v","L","$")
 keymap.set("n","gy","ggyG")
-keymap.set("n",">","n.")
 
 
 -- hover window
