@@ -30,6 +30,13 @@ else
     -- vscode neovimの標準の機能で shift + k : showHoverが実装されている
 end
 
+
+if vim.g.vscode == nil then
+else
+    local vscode = require('vscode')
+    keymap.set("n","gD",function() vscode.call("editor.action.goToTypeDefinition") end)
+end
+
 if vim.g.vscode == nil then
     keymap.set("n", "m", ":Files<CR>")
     -- TODO:一番初めのファイラの画面でmが使えない
