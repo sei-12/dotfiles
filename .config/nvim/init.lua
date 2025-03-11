@@ -1,4 +1,5 @@
 vim.opt.clipboard      = 'unnamedplus'
+vim.opt.ignorecase     = true
 
 if vim.g.vscode == nil then
     require "normal"
