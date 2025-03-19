@@ -15,9 +15,7 @@ local spec = {
     {
         'smoka7/hop.nvim',
         version = "*",
-        opts = {
-            keys = 'flisuetovxqpdygbzhckran'
-        }
+        opts = { }
     },
 }
 
