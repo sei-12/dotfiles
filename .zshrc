@@ -89,6 +89,7 @@ alias re='exec zsh'
 alias gcb='git checkout -b'
 alias t='touch'
 alias lg="ls | grep"
+alias fd="fd -H"
 
 if [ $PKG_MANAGER = "brew" ]; then
 	function brew_update(){
