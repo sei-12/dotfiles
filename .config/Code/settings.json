@@ -84,5 +84,6 @@
     },
     "accessibility.signals.progress": {
         "sound": "off"
-    }
+    },
+    "python.analysis.typeCheckingMode": "standard"
 }
