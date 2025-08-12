@@ -47,6 +47,7 @@ brew install --cask karabiner-elements
 brew install --cask obsidian
 brew install --cask visual-studio-code
 brew install --cask wezterm
+brew install --cask iina
 
 brew tap koekeishiya/formulae
 brew install koekeishiya/formulae/yabai
