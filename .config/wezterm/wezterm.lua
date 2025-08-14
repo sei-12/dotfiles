@@ -2,7 +2,11 @@ local wezterm = require 'wezterm'
 local tab = require "tab"
 local config = {}
 
-config.font = wezterm.font('Hack Nerd Font', { weight = 'Bold', italic = false })
+config.font = wezterm.font_with_fallback {
+	{ family = 'Hack Nerd Font', weight = 'Bold', italic = false },
+    { family = 'ヒラギノ角ゴシック', weight = 'Medium' }
+}
+
 config.font_size = 15
 config.use_ime = true
 
