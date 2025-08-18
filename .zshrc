@@ -168,9 +168,11 @@ fi
 #
 if type "bat" >/dev/null 2>&1; then
 	alias cat='bat --paging=never'
+	alias less='bat'
 else
 	if type "batcat" >/dev/null 2>&1; then
 		alias cat='batcat --paging=never'
+		alias less='batcat'
 	else
 		echo "\"batcat\" is not installed"
 	fi
