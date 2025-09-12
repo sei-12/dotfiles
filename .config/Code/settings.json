@@ -53,7 +53,6 @@
     "editor.stickyScroll.enabled": false,
     "typescript.tsserver.experimental.enableProjectDiagnostics": true,
     "haskell.manageHLS": "GHCup",
-    "workbench.sideBar.location": "right",
     // "editor.wordWrap": "on",
     "zig.zls.enabled": "on",
     "[go]": {
@@ -85,5 +84,14 @@
     "accessibility.signals.progress": {
         "sound": "off"
     },
-    "python.analysis.typeCheckingMode": "standard"
+    "python.analysis.typeCheckingMode": "standard",
+    "workbench.sideBar.location": "right",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "javascript": false,
+        "python": false
+    }
 }

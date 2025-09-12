@@ -92,11 +92,6 @@ alias lg="ls | grep"
 alias fd="fd -H"
 
 if [ $PKG_MANAGER = "brew" ]; then
-	function brew_update(){
-		echo "\"update_pkgs\" に変更しました"
-		return 1
-	}
-
 	alias update_pkgs='brew upgrade --cask --greedy && brew update && brew upgrade && brew cleanup'
 fi
 

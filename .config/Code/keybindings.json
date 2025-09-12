@@ -46,6 +46,10 @@
         "command": "editor.action.inlineSuggest.commit"
     },
     {
+        "key": "shift+ctrl+space",
+        "command": "github.copilot.completions.toggle"
+    },
+    {
         "key": "cmd+r",
         "command": "workbench.action.reloadWindow"
     },
