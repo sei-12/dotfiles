@@ -26,9 +26,6 @@
     "errorLens.enabledDiagnosticLevels": ["error", "warning"],
     "vim.surround": true,
     "editor.formatOnSave": true,
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
@@ -43,10 +40,24 @@
         }
     ],
     "window.zoomLevel": 0,
+    //----------------------------------------------------------------------------------------------------//
+    //                                                                                                    //
+    //                                             FORMATTER                                              //
+    //                                                                                                    //
+    //----------------------------------------------------------------------------------------------------//
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.tabWidth": 4,
+    "[json]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
     },
     "rust-analyzer.checkOnSave": true,
     "rust-analyzer.check.command": "clippy",
@@ -55,9 +66,6 @@
     "haskell.manageHLS": "GHCup",
     // "editor.wordWrap": "on",
     "zig.zls.enabled": "on",
-    "[go]": {
-        "editor.defaultFormatter": "golang.go"
-    },
     "accessibility.signals.chatRequestSent": {
         "sound": "off"
     },
