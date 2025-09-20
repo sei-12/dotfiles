@@ -29,28 +29,25 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "typescript.updateImportsOnFileMove.enabled": "always",
     "files.autoSave": "afterDelay",
-    "liveServer.settings.donotVerifyTags": true,
-    "workbench.colorTheme": "Tokyo Night Storm Frameless",
-    "multiCommand.commands": [
-        {
-            "command": "my.fold.level1",
-            "sequence": ["cursorBottom", "editor.foldLevel1"]
-        }
-    ],
     "window.zoomLevel": 0,
+    "workbench.colorTheme": "Tokyo Night Storm Frameless",
     //----------------------------------------------------------------------------------------------------//
     //                                                                                                    //
-    //                                             FORMATTER                                              //
+    //                                             TYPESCRIPT                                             //
     //                                                                                                    //
     //----------------------------------------------------------------------------------------------------//
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.tabWidth": 4,
-    "[json]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
     "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.tabWidth": 4,
+
+    // Unable to load schema from 'https://json.schemastore.org/prettierrc': getaddrinfo ENOTFOUND json.schemastore.org.
+    // https://qiita.com/Yasushi-Mo/items/44e4ad188038dac9663f
+
+    "json.schemaDownload.enable": true,
+    "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[rust]": {
