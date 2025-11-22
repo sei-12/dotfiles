@@ -32,11 +32,15 @@
     "files.autoSave": "afterDelay",
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Tokyo Night Storm Frameless",
+    "editor.stickyScroll.enabled": false,
+
     //----------------------------------------------------------------------------------------------------//
     //                                                                                                    //
     //                                             TYPESCRIPT                                             //
     //                                                                                                    //
     //----------------------------------------------------------------------------------------------------//
+    // eslint.config.jsなどの設定用のjsファイルなどを開いた時にnode_modules/でエラーが発生してしまうためfalseに設定する
+    "typescript.tsserver.experimental.enableProjectDiagnostics": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -45,7 +49,6 @@
 
     // Unable to load schema from 'https://json.schemastore.org/prettierrc': getaddrinfo ENOTFOUND json.schemastore.org.
     // https://qiita.com/Yasushi-Mo/items/44e4ad188038dac9663f
-
     "json.schemaDownload.enable": true,
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -58,14 +61,13 @@
     },
     "rust-analyzer.checkOnSave": true,
     "rust-analyzer.check.command": "clippy",
-    "editor.stickyScroll.enabled": false,
-    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
     "haskell.manageHLS": "GHCup",
     // "editor.wordWrap": "on",
     "zig.zls.enabled": "on",
     "accessibility.signals.chatRequestSent": {
         "sound": "off"
     },
+
     "accessibility.signals.clear": { "sound": "off" },
     "accessibility.signals.lineHasFoldedArea": { "sound": "off" },
     "accessibility.signals.lineHasInlineSuggestion": { "sound": "off" },
@@ -98,5 +100,24 @@
         "scminput": false,
         "javascript": false,
         "python": false
-    }
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[snippets]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
 }

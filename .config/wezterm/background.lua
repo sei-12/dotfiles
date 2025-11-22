@@ -25,6 +25,9 @@ local function get_random_bg(imgs_dir)
 	local background_images = scandir(imgs_dir)
 	local random_background = imgs_dir..background_images[math.random(#background_images)]
 	return random_background
+	-- ランダムをやめた
+	-- return HOME.."/dotfiles/.config/wezterm/wallpapers/bg.png"
+	
 end
 
 local BG_IMG = get_random_bg(BG_IMGS_DIR)
