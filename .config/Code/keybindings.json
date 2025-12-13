@@ -17,10 +17,10 @@
         "when": "sideBarVisible",
         "command": "workbench.action.toggleSidebarVisibility"
     },
-    // {
-    //     "key": "ctrl+i",
-    //     "command": "github.copilot.chat.completions.toggle"
-    // },
+    {
+        "key": "ctrl+shift+k",
+        "command": "github.copilot.chat.completions.toggle"
+    },
     {
         "key": "Escape",
         "when": "sideBarFocus",
