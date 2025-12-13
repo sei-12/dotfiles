@@ -93,14 +93,17 @@
     },
     "python.analysis.typeCheckingMode": "standard",
     "workbench.sideBar.location": "right",
-    "github.copilot.enable": {
-        "*": false,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false,
-        "javascript": false,
-        "python": false
-    },
+    // "github.copilot.enable": {
+    //     "*": false,
+    //     "plaintext": false,
+    //     "markdown": false,
+    //     "scminput": false,
+    //     "javascript": false,
+    //     "python": false,
+    //     "rust": false
+    // },
+    // "github.copilot.editor.enableAutoCompletions": false,
+    "editor.inlineSuggest.enabled": true,
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -119,5 +122,13 @@
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.secondarySideBar.defaultVisibility": "hidden"
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "liveServer.settings.donotVerifyTags": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "rust": false
+    }
 }
