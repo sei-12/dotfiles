@@ -11,7 +11,7 @@
     "git.openRepositoryInParentFolders": "always",
     "editor.fontWeight": "600",
     "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": true,
+    "explorer.confirmDragAndDrop": false,
     "security.workspace.trust.untrustedFiles": "open",
     "screencastMode.keyboardOptions": {
         "showSingleEditorCursorMoves": false
@@ -111,7 +111,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
